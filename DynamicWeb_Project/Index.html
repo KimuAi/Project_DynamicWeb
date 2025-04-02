@@ -12,7 +12,7 @@
         <nav>
             <ul>
                 <!-- Theme toggle button -->
-            <button id="theme-toggle">Schakel naar Donker Thema</button> 
+                <button id="theme-toggle">Schakel naar Donker Thema</button>
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Favoriet.html">Favorieten</a></li>
             </ul>
@@ -27,14 +27,23 @@
             <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
         </section>
 
-        <!-- Features Section -->
-        <section id="kenmerken">
-            <h3>Wat je kunt doen op deze site</h3>
-            <ul>
-                <li>Filter locaties op type, datum, en meer</li>
-                <li>Sla je favoriete kunstwerken op</li>
-                <li>Gebruik een interactieve kaart</li>
-            </ul>
+        <!-- Filters en zoekfunctionaliteit -->
+        <section id="filters">
+            <label for="search-input">Zoek naar kunstwerken:</label>
+            <input type="text" id="search-input" placeholder="Zoek kunstwerken...">
+
+            <label for="filter-type">Filter op type:</label>
+            <select id="filter-type">
+                <option value="all">Alle types</option>
+                <option value="art">Kunst</option>
+                <option value="park">Parken</option>
+            </select>
+
+            <label for="sort-by">Sorteer op:</label>
+            <select id="sort-by">
+                <option value="title">Sorteer op Titel</option>
+                <option value="date">Sorteer op Datum</option>
+            </select>
         </section>
 
         <!-- Art Card Section -->
@@ -51,14 +60,17 @@
             <h3>Street Art in Brussel</h3>
             <p>Ontdek de mooiste street art in Brussel!</p>
             <button id="load-more-btn">Laad meer</button>
-        <div id="data-container"></div>
+            <div id="data-container"></div> <!-- Container voor dynamische kunstwerken -->
+        </section>
+
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2020 BrusselsExplorer</p>
+        <p>&copy; 2025 BrusselsExplorer</p>
     </footer>
 
     <script src="Script.mjs"></script>
+
 </body>
 </html>
