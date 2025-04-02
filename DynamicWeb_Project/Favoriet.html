@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Favorieten</title>
+    <title>Favorieten - BrusselsExplorer</title>
+    <link rel="stylesheet" href="Layout.css">
 </head>
 <body>
+    <!-- Header Section (met aparte navigatie en achtergrond) -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Theme toggle button -->
+                <button id="theme-toggle">Schakel naar Donker Thema</button> 
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Favoriet.html">Favorieten</a></li>
+            </ul>
+        </nav>
+    </header>
     
-</body>
-</html>
+
+    <!-- Main content -->
+    <main>
+        <section id="favorieten">
+            <h2>Jouw Favorieten</h2>
+            <p>Hier vind je al je opgeslagen kunstwerken. Klik op de afbeelding om meer te zien!</p>
+
+            <!-- Favorieten lijst -->
+            <div id="favorieten-lijst">
+                <!-- Dynamisch toegevoegde favorieten zullen hier verschijnen -->
+                <div class="art-card">
+                    <img src="artwork1.jpg" alt="Streetart 1">
+                    <h3>Title of Artwork</h3>
+                    <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+                    <p>Beschrijving van het kunstwerk...</p>
+                    <button class="remove-favorite-btn" data-artwork-id="1">Verwijder uit favorieten</button>
+                </div>
+
+                <!-- Meer favorieten kunnen hier dynamisch worden toegevoegd -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2020 BrusselsExplorer</p>
+    </footer>
