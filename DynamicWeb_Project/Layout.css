@@ -3,8 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; 
-    color: #333;
+    background-color: #F7F2E7; /* Licht crème-beige achtergrond */
+    color: #4E4A44; /* Donkergrijze tekstkleur voor leesbaarheid */
     padding-top: 80px; 
     display: flex;
     flex-direction: column;
@@ -13,17 +13,16 @@ body {
 
 /* Header en navigatiebalk */
 header {
-    background-color: #7399b9; 
+    background-color: #D1C6B1; /* Zachte zandkleur voor de header */
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     display: flex;
-    /* Zorgt ervoor dat de inhoud in het midden van de header staat */
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
 }
 
@@ -32,11 +31,10 @@ header {
     position: absolute;
     left: 0; 
     top: 50%; 
-    /* Zorgt ervoor dat de knop precies in het midden van de header zit */
     transform: translateY(-50%); 
     padding: 10px 20px;
-    background-color: white; 
-    color: #4682b4; 
+    background-color: #A7A47D; /* Olijfgroen pastel voor de knop achtergrond */
+    color: white; /* Witte tekstkleur */
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -45,8 +43,8 @@ header {
 }
 
 #theme-toggle:hover {
-    background-color: #4682b4; 
-    color: white; 
+    background-color: #B19A6A; /* Licht goud-beige bij hover */
+    color: white;
 }
 
 /* Navigatiebalk */
@@ -56,9 +54,8 @@ nav ul {
     padding: 0;
     text-align: center;
     display: flex;
-    justify-content: center; 
-    /* Zorgt ervoor dat de nav-items het resterende ruimte innemen */
-    flex-grow: 1; 
+    justify-content: center;
+    flex-grow: 1;
 }
 
 nav ul li {
@@ -68,13 +65,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white; 
+    color: #4E4A44; /* Donkergrijze tekstkleur */
     font-size: 18px;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #ff6347; 
+    color: #B19A6A; /* Licht goud-beige bij hover */
 }
 
 /* Main sectie */
@@ -87,22 +84,22 @@ main {
 
 /* Introductie sectie */
 #intro {
-    background-color: white;
+    background-color: #F7F2E7; /* Heel lichte crème-beige voor intro */
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #D1C6B1; /* Zachte zandkleur rand */
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: center;
 }
 
 #intro h2 {
     font-size: 2em;
-    color: #4682b4;
+    color: #A7A47D; /* Olijfgroen pastel voor de titel */
 }
 
 #intro p {
     font-size: 1.2em;
-    color: #555;
+    color: #4E4A44; /* Donkergrijs voor de tekst */
 }
 
 /* Wat je kunt doen op deze website */
@@ -116,7 +113,7 @@ main {
 
 #kenmerken h3 {
     font-size: 1.8em;
-    color: #4682b4;
+    color: #A7A47D; /* Olijfgroen pastel voor de koptekst */
     margin-bottom: 20px;
 }
 
@@ -127,13 +124,13 @@ main {
 
 #kenmerken li {
     font-size: 1.2em;
-    color: #555;
+    color: #4E4A44;
     margin-bottom: 15px;
 }
 
 /* Art Card styling */
 .art-card {
-    background-color: white;
+    background-color: #F7F2E7; /* Pastel beige voor de kaarten */
     width: 300px;
     padding: 20px;
     border-radius: 8px;
@@ -144,8 +141,7 @@ main {
 }
 
 .art-card:hover {
-    /* Vergroot de kaart bij hover */
-    transform: scale(1.05); 
+    transform: scale(1.05);
 }
 
 .art-card img {
@@ -156,7 +152,7 @@ main {
 
 .art-card h3 {
     font-size: 1.2em;
-    color: #4682b4;
+    color: #A7A47D; /* Olijfgroen pastel voor de kaart titel */
     margin-top: 10px;
 }
 
@@ -167,7 +163,7 @@ main {
 
 /* Favorite button styling */
 .favorite-btn {
-    background-color: #4682b4;
+    background-color: #A7A47D; /* Olijfgroen pastel voor de knop */
     color: white;
     padding: 10px 15px;
     font-weight: bold;
@@ -180,7 +176,7 @@ main {
 }
 
 .favorite-btn:hover {
-    background-color: #ff6347;
+    background-color: #B19A6A; /* Licht goud-beige bij hover */
 }
 
 /* Street art sectie */
@@ -195,7 +191,7 @@ main {
 
 /* Footer */
 footer {
-    background-color: #add8e6;
+    background-color: #D1C6B1; /* Zachte zandkleur voor de footer */
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -223,7 +219,6 @@ footer p {
     }
 
     .art-card {
-        /* Kaarten nemen nu 100% van de breedte in op kleinere schermen */
         width: 100%; 
         margin: 10px 0;
     }
@@ -241,12 +236,10 @@ footer p {
         padding-left: 20px;
     }
 
-    /* Verklein de tekst van 'Wat je kunt doen' verder voor mobiele schermen */
     #kenmerken li {
         font-size: 0.9em;
     }
 
-    /* Zorg ervoor dat de intro sectie niet te groot is */
     #intro {
         padding: 20px;
     }
