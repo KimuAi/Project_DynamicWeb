@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +11,10 @@
     <header>
         <nav>
             <ul>
-                <!-- Thema toggle button -->
-                <button id="thema-toggle">Schakel naar Donker Thema</button>
+                <!-- Theme toggle button -->
+            <button id="theme-toggle">Schakel naar Donker Thema</button> 
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Favoriet.html">Favorieten</a></li>
-                <li><a href="InfromatieTab.html">Meer Informatie over Street Art</a></li> <!-- Link naar InformatieTab -->
             </ul>
         </nav>
     </header>
@@ -27,47 +26,39 @@
             <h2>Welkom bij BrusselsExplorer</h2>
             <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
         </section>
-        <hr>
 
-        <!-- Filters en zoekfunctionaliteit -->
-        <section id="filters">
-            <label for="search-input">Zoek naar kunstwerken:</label>
-            <input type="text" id="search-input" placeholder="Zoek kunstwerken...">
-
-            <label for="filter-type">Filter type:</label>
-            <select id="filter-type">
-                <option value="all">Alle types</option>
-                <option value="art">Kunst</option>
-                <option value="Loacatie">Locatie</option>
-            </select>
-
-            <label for="sort-by">Sorteer op:</label>
-            <select id="sort-by">
-                <option value="title">Sorteer op Titel</option>
-                <option value="date">Sorteer op Datum</option>
-            </select>
+        <!-- Features Section -->
+        <section id="kenmerken">
+            <h3>Wat je kunt doen op deze site</h3>
+            <ul>
+                <li>Filter locaties op type, datum, en meer</li>
+                <li>Sla je favoriete kunstwerken op</li>
+                <li>Gebruik een interactieve kaart</li>
+            </ul>
         </section>
 
-        <hr>
+        <!-- Art Card Section -->
+        <section class="art-card">
+            <img src="artwork1.jpg" alt="Streetart 1">
+            <h3>Title of Artwork</h3>
+            <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+            <p>Beschrijving van het kunstwerk...</p>
+            <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+        </section>
+
         <!-- Street Art Section -->
         <section id="street-art">
             <h3>Street Art in Brussel</h3>
             <p>Ontdek de mooiste street art in Brussel!</p>
-            <div id="data-container"></div> 
-
-            <!-- Art Card Section -->
-            <section class="art-card">
-                <h3>Title of Artwork</h3>
-                <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-                <p>Beschrijving van het kunstwerk...</p>
-                <!-- Hier komt de datum -->
-                <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
-                <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
-            </section>
-        </section>
-
+            <button id="load-more-btn">Laad meer</button>
+        <div id="data-container"></div>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy;
+        <p>&copy; 2020 BrusselsExplorer</p>
+    </footer>
+
+    <script src=""></script>
+</body>
+</html>
