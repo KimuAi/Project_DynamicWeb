@@ -53,23 +53,17 @@
             <p>Ontdek de mooiste street art in Brussel!</p>
             <div id="data-container"></div> <!-- Container voor dynamische kunstwerken -->
 
-
-<!-- Art Card Section -->
-    <section class="art-card">
-    <h3>Title of Artwork</h3>
-    <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-    <p>Beschrijving van het kunstwerk...</p>
-    <!-- Hier komt de datum -->
-    <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
-    <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
-    </section>
-
-<!-- Container voor de dynamische kunstwerken -->
-<div id="data-container"></div>
-
-
+            <!-- Template voor kunstwerken -->
+            <template id="art-template">
+                <article>
+                    <img src="" alt="">
+                    <h4></h4>
+                    <p></p>
+                    <button>Voeg toe aan favorieten</button>
+                </article>
+            </template>
         </section>
-
+        
     </main>
 
     <!-- Footer Section -->

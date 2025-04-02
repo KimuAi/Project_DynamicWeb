@@ -29,24 +29,31 @@ header {
 /* Knop voor thema wisselen aan de linkerkant van de header, in het midden */
 #theme-toggle {
     position: absolute;
-    left: 0;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px 20px;
-    background-color: #A7A47D; /* Kleur van de knop voor het lichte thema */
-    color: white;
+    padding: 10px 10px;
+    background-color: #F7F2E7;
+    color: #4E4A44;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transition toegevoegd voor animatie */
 }
 
-/* Hover effect voor de knop */
 #theme-toggle:hover {
-    background-color: #4E4A44; /* Donkere kleur voor de knop bij hover */
-    color: #F7F2E7; /* Lichte kleur voor de tekst bij hover */
+    background-color: #4E4A44;
+    color: #F7F2E7;
+}
+@media screen and (max-width: 768px) {
+    #theme-toggle {
+        position: relative;
+        top: 10px;
+        left: 2px;
+
+    }
+    
 }
 
 /* Navigatiebalk */
