@@ -28,9 +28,10 @@ function displayStreetArt(records) {
             <h3>${fields.title || 'Onbekende Titel'}</h3>
             <p>Artist: <span class="artist-name">${fields.artist || 'Onbekend'}</span></p>
             <p>${fields.description || 'Geen beschrijving beschikbaar.'}</p>
+            <p><strong>Jaar:</strong> ${fields.date || 'Onbekend'}</p> <!-- Hier voeg je de datum toe -->
             <button class="favorite-btn" data-artwork-id="${record.id}">Voeg toe aan favorieten</button>
         `;
-        
+
         container.appendChild(artElement);
     });
 }
