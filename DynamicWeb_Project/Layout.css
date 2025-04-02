@@ -3,9 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f8ff; /* Lichte achtergrondkleur voor de body */
+    background-color: #f0f8ff; 
     color: #333;
-    padding-top: 80px; /* Ruimte voor de vaste header */
+    padding-top: 80px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -22,19 +22,21 @@ header {
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center; /* Zorgt ervoor dat de inhoud in het midden van de header staat */
+    /* Zorgt ervoor dat de inhoud in het midden van de header staat */
+    justify-content: center; 
     align-items: center;
 }
 
 /* Knop voor thema wisselen aan de linkerkant van de header, in het midden */
 #theme-toggle {
     position: absolute;
-    left: 0; /* Zet de knop aan de linkerzijde van de header */
-    top: 50%; /* Verticaal gecentreerd */
-    transform: translateY(-50%); /* Zorgt ervoor dat de knop precies in het midden van de header zit */
+    left: 0; 
+    top: 50%; 
+    /* Zorgt ervoor dat de knop precies in het midden van de header zit */
+    transform: translateY(-50%); 
     padding: 10px 20px;
-    background-color: white; /* Witte achtergrondkleur voor de knop */
-    color: #4682b4; /* Blauwe tekstkleur */
+    background-color: white; 
+    color: #4682b4; 
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -43,8 +45,8 @@ header {
 }
 
 #theme-toggle:hover {
-    background-color: #4682b4; /* Blauwe achtergrond bij hover */
-    color: white; /* Witte tekstkleur bij hover */
+    background-color: #4682b4; 
+    color: white; 
 }
 
 /* Navigatiebalk */
@@ -54,8 +56,9 @@ nav ul {
     padding: 0;
     text-align: center;
     display: flex;
-    justify-content: center; /* Zorgt ervoor dat de nav-items in het midden staan */
-    flex-grow: 1; /* Zorgt ervoor dat de nav-items het resterende ruimte innemen */
+    justify-content: center; 
+    /* Zorgt ervoor dat de nav-items het resterende ruimte innemen */
+    flex-grow: 1; 
 }
 
 nav ul li {
@@ -141,7 +144,8 @@ main {
 }
 
 .art-card:hover {
-    transform: scale(1.05); /* Vergroot de kaart bij hover */
+    /* Vergroot de kaart bij hover */
+    transform: scale(1.05); 
 }
 
 .art-card img {
@@ -219,7 +223,8 @@ footer p {
     }
 
     .art-card {
-        width: 100%; /* Kaarten nemen nu 100% van de breedte in op kleinere schermen */
+        /* Kaarten nemen nu 100% van de breedte in op kleinere schermen */
+        width: 100%; 
         margin: 10px 0;
     }
 
