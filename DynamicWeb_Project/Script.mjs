@@ -1,4 +1,3 @@
-// Declareer de DOM-elementen bovenaan
 const apiUrl = 'https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/streetart/records?limit=23';
 const dataContainer = document.getElementById('data-container');
 const searchInput = document.getElementById('search-input');
@@ -34,12 +33,17 @@ async function fetchAndDisplayArtworks() {
             let filteredData = data.results;
 
             // Filteren op zoekterm (indien ingevoerd)
-            const searchTerm = searchInput.value.toLowerCase();
+            const searchTerm = searchInput.value.trim().toLowerCase(); // Verwijder onnodige spaties aan het begin en einde van de zoekterm
             if (searchTerm) {
-                filteredData = filteredData.filter(record => 
-                    record.name_of_the_work.toLowerCase().includes(searchTerm) ||
-                    record.nom_de_l_artiste.toLowerCase().includes(searchTerm)
-                );
+                filteredData = filteredData.filter(record => {
+                    // Zorg ervoor dat de velden bestaan voordat we ze vergelijken
+                    const workName = record.name_of_the_work ? record.name_of_the_work.toLowerCase() : '';
+                    const artistName = record.nom_de_l_artiste ? record.nom_de_l_artiste.toLowerCase() : '';
+                    const adresSearch = record.adresse ? record.adresse.toLowerCase() : '';
+                    const descriptionSearch = record.explanation ? record.explanation.toLowerCase() : ''
+            
+                    return workName.includes(searchTerm) || artistName.includes(searchTerm) || adresSearch.includes(searchTerm) || descriptionSearch.includes(searchTerm);
+                });
             }
 
             // Filteren op type (indien geselecteerd)
@@ -47,28 +51,47 @@ async function fetchAndDisplayArtworks() {
             if (selectedType !== 'all') {
                 filteredData = filteredData.filter(record => record.type_of_art && record.type_of_art.toLowerCase() === selectedType);
             }
-
-            // Sorteer de resultaten
+            
+            // Sorteer de resultaten op basis van de geselecteerde sorteermethode
             filteredData = filteredData.sort((a, b) => {
-                // Sorteren op jaartal (Null komt onderaan)
-                const yearA = a.annee ? parseInt(a.annee) : Infinity; // Onbekend jaar naar onderen
-                const yearB = b.annee ? parseInt(b.annee) : Infinity;
+            // Als 'sortBy' op 'date' is ingesteld, sorteren we op jaartal
+            if (sortBy.value === 'date') {
+            // Sorteren op jaartal (Null komt onderaan)
+            const yearA = a.annee ? parseInt(a.annee) : Infinity; // Onbekend jaar naar onderen
+            const yearB = b.annee ? parseInt(b.annee) : Infinity;
 
-                if (yearA !== yearB) return yearA - yearB;
+            if (yearA !== yearB) return yearA - yearB;
+            }
 
-                // Als jaartallen gelijk zijn, sorteren we op titel (lege namen onderaan)
-                const titleA = a.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
-                const titleB = b.name_of_the_work || '';
+            // Als 'sortBy' op 'title' is ingesteld, sorteren we op titel
+            if (sortBy.value === 'title') {
+            // Functie om te controleren of de titel alleen symbolen of leeg is
+            const isEmptyOrSymbol = (str) => !str || /^[^\w]+$/.test(str);  // Reguliere expressie voor alleen symbolen of leeg
 
-                if (titleA === titleB) {
-                    // Als de titels gelijk zijn, sorteren we op naam van de artiest
-                    const artistA = a.nom_de_l_artiste || '';
-                    const artistB = b.nom_de_l_artiste || '';
-                    return artistA.localeCompare(artistB);
-                }
+            const titleA = a.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
+            const titleB = b.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
 
-                return titleA.localeCompare(titleB);
-            });
+            // Als een van de titels leeg of symbolen bevat, deze naar beneden verplaatsen
+            if (isEmptyOrSymbol(titleA) && !isEmptyOrSymbol(titleB)) {
+            return 1; // A komt onder B
+            }
+            if (!isEmptyOrSymbol(titleA) && isEmptyOrSymbol(titleB)) {
+                return -1; // B komt onder A
+            }
+
+            // Als de titels gelijk zijn, sorteren we op naam van de artiest
+            if (titleA === titleB) {
+                const artistA = a.nom_de_l_artiste || '';
+                const artistB = b.nom_de_l_artiste || '';
+                return artistA.localeCompare(artistB);
+            }
+
+            return titleA.localeCompare(titleB);
+            }
+
+            // Als er geen sorteerinstelling is, terug naar de standaard
+            return 0;
+        });
 
             // Voor elke record, maak een art-card en voeg deze toe aan de container
             filteredData.forEach(record => {
