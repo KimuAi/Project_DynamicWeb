@@ -15,6 +15,7 @@
                 <button id="thema-toggle">Schakel naar Donker Thema</button>
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Favoriet.html">Favorieten</a></li>
+                <li><a href="InfromatieTab.html">Meer Informatie over Street Art</a></li> <!-- Link naar InformatieTab -->
             </ul>
         </nav>
     </header>
@@ -26,7 +27,8 @@
             <h2>Welkom bij BrusselsExplorer</h2>
             <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
         </section>
-<hr>
+        <hr>
+
         <!-- Filters en zoekfunctionaliteit -->
         <section id="filters">
             <label for="search-input">Zoek naar kunstwerken:</label>
@@ -36,7 +38,7 @@
             <select id="filter-type">
                 <option value="all">Alle types</option>
                 <option value="art">Kunst</option>
-                <option value="Loacatie">locatie</option>
+                <option value="Loacatie">Locatie</option>
             </select>
 
             <label for="sort-by">Sorteer op:</label>
@@ -46,38 +48,26 @@
             </select>
         </section>
 
-<hr>
+        <hr>
         <!-- Street Art Section -->
         <section id="street-art">
             <h3>Street Art in Brussel</h3>
             <p>Ontdek de mooiste street art in Brussel!</p>
-            <div id="data-container"></div> <!-- Container voor dynamische kunstwerken -->
-            
+            <div id="data-container"></div> 
 
-<!-- Art Card Section -->
-    <section class="art-card">
-    <h3>Title of Artwork</h3>
-    <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-    <p>Beschrijving van het kunstwerk...</p>
-    <!-- Hier komt de datum -->
-    <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
-    <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
-    </section>
-
-<!-- Container voor de dynamische kunstwerken -->
-<div id="data-container"></div>
-
-
+            <!-- Art Card Section -->
+            <section class="art-card">
+                <h3>Title of Artwork</h3>
+                <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+                <p>Beschrijving van het kunstwerk...</p>
+                <!-- Hier komt de datum -->
+                <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
+                <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+            </section>
         </section>
 
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 BrusselsExplorer</p>
-    </footer>
-
-    <script src="Script.mjs"></script>
-
-</body>
-</html>
+        <p>&copy;
