@@ -1,0 +1,248 @@
+/* Algemene opmaak voor de hele pagina */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff; /* Lichte achtergrondkleur voor de body */
+    color: #333;
+    padding-top: 80px; /* Ruimte voor de vaste header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header en navigatiebalk */
+header {
+    background-color: #7399b9; 
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Zorgt ervoor dat de inhoud in het midden van de header staat */
+    align-items: center;
+}
+
+/* Knop voor thema wisselen aan de linkerkant van de header, in het midden */
+#theme-toggle {
+    position: absolute;
+    left: 0; /* Zet de knop aan de linkerzijde van de header */
+    top: 50%; /* Verticaal gecentreerd */
+    transform: translateY(-50%); /* Zorgt ervoor dat de knop precies in het midden van de header zit */
+    padding: 10px 20px;
+    background-color: white; /* Witte achtergrondkleur voor de knop */
+    color: #4682b4; /* Blauwe tekstkleur */
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#theme-toggle:hover {
+    background-color: #4682b4; /* Blauwe achtergrond bij hover */
+    color: white; /* Witte tekstkleur bij hover */
+}
+
+/* Navigatiebalk */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* Zorgt ervoor dat de nav-items in het midden staan */
+    flex-grow: 1; /* Zorgt ervoor dat de nav-items het resterende ruimte innemen */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white; 
+    font-size: 18px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #ff6347; 
+}
+
+/* Main sectie */
+main {
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+/* Introductie sectie */
+#intro {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#intro h2 {
+    font-size: 2em;
+    color: #4682b4;
+}
+
+#intro p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Wat je kunt doen op deze website */
+#kenmerken {
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#kenmerken h3 {
+    font-size: 1.8em;
+    color: #4682b4;
+    margin-bottom: 20px;
+}
+
+#kenmerken ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#kenmerken li {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Art Card styling */
+.art-card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.art-card:hover {
+    transform: scale(1.05); /* Vergroot de kaart bij hover */
+}
+
+.art-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.art-card h3 {
+    font-size: 1.2em;
+    color: #4682b4;
+    margin-top: 10px;
+}
+
+.art-card p {
+    color: #777;
+    font-size: 1em;
+}
+
+/* Favorite button styling */
+.favorite-btn {
+    background-color: #4682b4;
+    color: white;
+    padding: 10px 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.favorite-btn:hover {
+    background-color: #ff6347;
+}
+
+/* Street art sectie */
+#data-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #add8e6;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1em;
+    color: white;
+}
+
+/* Responsieve aanpassingen voor kleinere schermen */
+@media (max-width: 768px) {
+    #intro h2 {
+        font-size: 1.5em;
+    }
+
+    #kenmerken h3 {
+        font-size: 1.2em;
+    }
+
+    #kenmerken li {
+        font-size: 1em;
+    }
+
+    .art-card {
+        width: 100%; /* Kaarten nemen nu 100% van de breedte in op kleinere schermen */
+        margin: 10px 0;
+    }
+
+    .art-card h3 {
+        font-size: 1.2em;
+    }
+
+    #data-container {
+        justify-content: center;
+    }
+
+    #kenmerken ul {
+        text-align: left;
+        padding-left: 20px;
+    }
+
+    /* Verklein de tekst van 'Wat je kunt doen' verder voor mobiele schermen */
+    #kenmerken li {
+        font-size: 0.9em;
+    }
+
+    /* Zorg ervoor dat de intro sectie niet te groot is */
+    #intro {
+        padding: 20px;
+    }
+}

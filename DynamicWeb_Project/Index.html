@@ -7,78 +7,58 @@
     <link rel="stylesheet" href="Layout.css">
 </head>
 <body>
-<h1>Homepage</h1>
-<header>
-    <nav>
-        <ul>
-            <li><a href="Index.html">Home</a></li>
-            <li><a href="InfromatieTab.html">Infromatie over jou gekozen streetart</a></li>
-        </ul>
-    </nav>
-    /*Dit is de knop voor naar donker of licht thema te switchen*/
-    <button id="theme-toggle">Schakel naar Donker Thema</button> 
+    <!-- Header Section (met aparte navigatie en achtergrond) -->
+    <header>
+        <nav>
+            <ul>
+                <!-- Theme toggle button -->
+            <button id="theme-toggle">Schakel naar Donker Thema</button> 
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="Favoriet.html">Favorieten</a></li>
+            </ul>
+        </nav>
+    </header>
+    
 
+    <!-- Main content -->
     <main>
         <section id="intro">
-            <h1>Welkom bij BrusselsExplorer</h1>
+            <h2>Welkom bij BrusselsExplorer</h2>
             <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
         </section>
+
+        <!-- Features Section -->
+        <section id="kenmerken">
+            <h3>Wat je kunt doen op deze site</h3>
+            <ul>
+                <li>Filter locaties op type, datum, en meer</li>
+                <li>Sla je favoriete kunstwerken op</li>
+                <li>Gebruik een interactieve kaart</li>
+            </ul>
+        </section>
+
+        <!-- Art Card Section -->
+        <section class="art-card">
+            <img src="artwork1.jpg" alt="Streetart 1">
+            <h3>Title of Artwork</h3>
+            <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+            <p>Beschrijving van het kunstwerk...</p>
+            <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+        </section>
+
+        <!-- Street Art Section -->
+        <section id="street-art">
+            <h3>Street Art in Brussel</h3>
+            <p>Ontdek de mooiste street art in Brussel!</p>
+            <button id="load-more-btn">Laad meer</button>
+        <div id="data-container"></div>
     </main>
 
-    <section id="kenmerken">
-        <h2>Wat je kunt doen op deze site </h2>
-        <ul>
-            <li>Filter locaties op type, datum, en meer</li>
-            <li>Sla je favoriete kunstwerken op</li>
-            <li>Gebruik een interactieve kaart</li>
-        </ul>
-    </section>
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2020 BrusselsExplorer</p>
+    </footer>
 
-    <div class="art-card">
-        <img src="artwork1.jpg" alt="Streetart 1">
-        <h3>Title of Artwork</h3>
-        <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-        <p>Beschrijving van de kunstwerk...</p>
-        <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
-    </div>
-
-    <h3>Street art</h3>
-  <div id="data-container"></div> 
-
-
-
-</header>
-
-
-
-
-
-
-
-
-<footer>
-    <p>&copy; 2020 BrusselsExplorer</p>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <Script src=""></Script>
+    <script src=""></script>
 </body>
 </html>
