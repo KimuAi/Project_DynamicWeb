@@ -18,6 +18,7 @@
                 <button id="theme-toggle">Schakel naar Donker Thema</button> 
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Favoriet.html">Favorieten</a></li>
+                <li><a href="InfromatieTab.html">Meer Informatie over Street Art</a></li> 
             </ul>
         </nav>
     </header>
@@ -25,24 +26,21 @@
 
     <!-- Main content -->
     <main>
-        <section id="favorieten">
-            <h2>Jouw Favorieten</h2>
-            <p>Hier vind je al je opgeslagen kunstwerken. Klik op de afbeelding om meer te zien!</p>
+  <!-- Street Art Section -->
+  <section id="street-art">
+    <h3>Street Art in Brussel</h3>
+    <p>Ontdek de mooiste street art in Brussel!</p>
+    <div id="data-container"></div> 
 
-            <!-- Favorieten lijst -->
-            <div id="favorieten-lijst">
-                <!-- Dynamisch toegevoegde favorieten zullen hier verschijnen -->
-                <div class="art-card">
-                    <img src="artwork1.jpg" alt="Streetart 1">
-                    <h3>Title of Artwork</h3>
-                    <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-                    <p>Beschrijving van het kunstwerk...</p>
-                    <button class="remove-favorite-btn" data-artwork-id="1">Verwijder uit favorieten</button>
-                </div>
-
-                <!-- Meer favorieten kunnen hier dynamisch worden toegevoegd -->
-            </div>
-        </section>
+    <!-- Art Card Section -->
+    <section class="art-card">
+        <h3>Title of Artwork</h3>
+        <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+        <p>Beschrijving van het kunstwerk...</p>
+        <!-- Hier komt de datum -->
+        <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
+        <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+    </section>
     </main>
 
     <!-- Footer Section -->
