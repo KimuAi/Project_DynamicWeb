@@ -33,18 +33,20 @@ header {
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 20px;
-    background-color: #A7A47D;
+    background-color: #A7A47D; /* Kleur van de knop voor het lichte thema */
     color: white;
     font-weight: bold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition toegevoegd voor animatie */
 }
 
+/* Hover effect voor de knop */
 #theme-toggle:hover {
-    background-color: #B19A6A;
-    color: white;
+    background-color: #4E4A44; /* Donkere kleur voor de knop bij hover */
+    color: #F7F2E7; /* Lichte kleur voor de tekst bij hover */
 }
 
 /* Navigatiebalk */
