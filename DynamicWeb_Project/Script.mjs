@@ -5,6 +5,19 @@ const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
+let debounceTimeout;
+const DEBOUNCE_DELAY = 300; // Tijd in milliseconden tussen elke invoer (bijv. 300ms)
+
+searchInput.addEventListener('input', () => {
+    // Annuleer de vorige timeout als de gebruiker snel typt
+    clearTimeout(debounceTimeout);
+    
+    // Stel een nieuwe timeout in om de functie pas na een bepaalde tijd uit te voeren
+    debounceTimeout = setTimeout(() => {
+        fetchAndDisplayArtworks(); // Roept de originele functie aan
+    }, DEBOUNCE_DELAY);
+});
+
 // Haal en toon de kunstwerken
 async function fetchAndDisplayArtworks() {
     try {
@@ -18,10 +31,58 @@ async function fetchAndDisplayArtworks() {
         dataContainer.innerHTML = '';
 
         if (data && data.results) {
+            let filteredData = data.results;
+
+            // Filteren op zoekterm (indien ingevoerd)
+            const searchTerm = searchInput.value.toLowerCase();
+            if (searchTerm) {
+                filteredData = filteredData.filter(record => 
+                    record.name_of_the_work.toLowerCase().includes(searchTerm) ||
+                    record.nom_de_l_artiste.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            // Filteren op type (indien geselecteerd)
+            const selectedType = filterType.value;
+            if (selectedType !== 'all') {
+                filteredData = filteredData.filter(record => record.type_of_art && record.type_of_art.toLowerCase() === selectedType);
+            }
+
+            // Sorteer de resultaten
+            filteredData = filteredData.sort((a, b) => {
+                // Sorteren op jaartal (Null komt onderaan)
+                const yearA = a.annee ? parseInt(a.annee) : Infinity; // Onbekend jaar naar onderen
+                const yearB = b.annee ? parseInt(b.annee) : Infinity;
+
+                if (yearA !== yearB) return yearA - yearB;
+
+                // Als jaartallen gelijk zijn, sorteren we op titel (lege namen onderaan)
+                const titleA = a.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
+                const titleB = b.name_of_the_work || '';
+
+                if (titleA === titleB) {
+                    // Als de titels gelijk zijn, sorteren we op naam van de artiest
+                    const artistA = a.nom_de_l_artiste || '';
+                    const artistB = b.nom_de_l_artiste || '';
+                    return artistA.localeCompare(artistB);
+                }
+
+                return titleA.localeCompare(titleB);
+            });
+
             // Voor elke record, maak een art-card en voeg deze toe aan de container
-            data.results.forEach(record => {
+            filteredData.forEach(record => {
                 const artCard = document.createElement('section');
                 artCard.classList.add('art-card');
+
+                // Controleer of er een afbeelding beschikbaar is en voeg deze toe
+                if (record.photo && record.photo.url) {
+                    const image = document.createElement('img');
+                    image.src = record.photo.url;
+                    image.alt = record.name_of_the_work || 'Onbekend kunstwerk';
+                    image.classList.add('art-image');
+                    artCard.appendChild(image);
+                }
 
                 // Titel van het kunstwerk
                 const title = document.createElement('h3');
@@ -33,10 +94,15 @@ async function fetchAndDisplayArtworks() {
                 artistName.innerHTML = `Artist: <span class="artist-name">${record.nom_de_l_artiste || 'Onbekend'}</span>`;
                 artCard.appendChild(artistName);
 
-               // Beschrijving van het kunstwerk
+                // Beschrijving van het kunstwerk
                 const description = document.createElement('p');
                 description.textContent = record.explanation || 'Geen beschrijving beschikbaar';
                 artCard.appendChild(description);
+                
+                // Locatie van het kunstwerk
+                const location = document.createElement('p');
+                location.innerHTML = `<strong>Adres:</strong> <span class="art-location">${record.adresse || 'Onbekend'}</span>`;
+                artCard.appendChild(location);
 
                 // Jaar van het kunstwerk
                 const year = document.createElement('p');
@@ -53,6 +119,11 @@ async function fetchAndDisplayArtworks() {
                 // Voeg de art-card toe aan de container
                 dataContainer.appendChild(artCard);
             });
+
+            // Als er geen gefilterde data is
+            if (filteredData.length === 0) {
+                dataContainer.innerHTML = '<p>Geen resultaten gevonden</p>';
+            }
         } else {
             dataContainer.innerHTML = '<p>Geen records gevonden</p>';
         }
@@ -62,34 +133,10 @@ async function fetchAndDisplayArtworks() {
     }
 }
 
-// Filteren en sorteren op zoekopdracht en selecties
-searchInput.addEventListener('input', fetchAndDisplayArtworks);
-filterType.addEventListener('change', fetchAndDisplayArtworks);
-sortBy.addEventListener('change', fetchAndDisplayArtworks);
+// Event listeners voor filtering en sorteren
+searchInput.addEventListener('input', fetchAndDisplayArtworks); // Filter op zoekterm
+filterType.addEventListener('change', fetchAndDisplayArtworks); // Filter op type
+sortBy.addEventListener('change', fetchAndDisplayArtworks); // Sorteer de resultaten
 
-// Roep de functie aan bij het laden van de pagina
+// Zorg ervoor dat de kunstwerken standaard worden weergegeven bij het laden van de pagina
 fetchAndDisplayArtworks();
-
-// Favorieten knop klik event
-favoriteButton.addEventListener('click', function () {
-    // Verkrijg de specifieke gegevens van het kunstwerk
-    const artwork = {
-        title: record.name_of_the_work || 'Onbekend',
-        artist: record.nom_de_l_artiste || 'Onbekend',
-        description: record.explanation || 'Geen beschrijving beschikbaar',
-        year: record.annee || 'Onbekend',
-        recordId: record.recordid
-    };
-
-    // Verkrijg de huidige lijst van favorieten uit localStorage, of maak een nieuwe array als deze nog niet bestaat
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-
-    // Voeg het kunstwerk toe aan de favorietenlijst
-    favorites.push(artwork);
-
-    // Sla de bijgewerkte lijst op in localStorage
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-
-    // Stuur de gebruiker naar de Favorietenpagina
-    window.location.href = 'Favoriet.html';
-});
