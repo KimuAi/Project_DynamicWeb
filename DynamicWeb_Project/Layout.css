@@ -3,9 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #F7F2E7; /* Licht crème-beige achtergrond */
-    color: #4E4A44; /* Donkergrijze tekstkleur voor leesbaarheid */
-    padding-top: 80px; 
+    background-color: #F7F2E7;
+    color: #4E4A44;
+    padding-top: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,7 +13,7 @@ body {
 
 /* Header en navigatiebalk */
 header {
-    background-color: #D1C6B1; /* Zachte zandkleur voor de header */
+    background-color: #D1C6B1;
     padding: 20px 0;
     position: fixed;
     top: 0;
@@ -29,12 +29,12 @@ header {
 /* Knop voor thema wisselen aan de linkerkant van de header, in het midden */
 #theme-toggle {
     position: absolute;
-    left: 0; 
-    top: 50%; 
-    transform: translateY(-50%); 
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     padding: 10px 20px;
-    background-color: #A7A47D; /* Olijfgroen pastel voor de knop achtergrond */
-    color: white; /* Witte tekstkleur */
+    background-color: #A7A47D;
+    color: white;
     font-weight: bold;
     border: none;
     border-radius: 5px;
@@ -43,7 +43,7 @@ header {
 }
 
 #theme-toggle:hover {
-    background-color: #B19A6A; /* Licht goud-beige bij hover */
+    background-color: #B19A6A;
     color: white;
 }
 
@@ -65,28 +65,87 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #4E4A44; /* Donkergrijze tekstkleur */
+    color: #4E4A44;
     font-size: 18px;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #B19A6A; /* Licht goud-beige bij hover */
+    color: #B19A6A;
 }
 
 /* Main sectie */
 main {
     padding: 20px;
     width: 90%;
-    max-width: 1200px; 
+    max-width: 1200px;
     margin: 0 auto;
+}
+
+/* Styling voor het filters-sectie */
+#filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px;
+    background-color: #F7F2E7;
+    max-width: 1000px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+
+/* Styling voor labels */
+#filters label {
+    font-weight: bold;
+    color: #4E4A44;
+    width: 80px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+/* Styling voor de input- en select-velden */
+#filters input,
+#filters select {
+    padding: 10px;
+    border: 1px solid #A7A47D;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #ffffff;
+    width: 220px;
+}
+
+/* Focus-effect voor input- en select-velden */
+#filters input:focus,
+#filters select:focus {
+    border-color: #B19A6A;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+}
+
+/* Responsief ontwerp voor kleinere schermen */
+@media (max-width: 768px) {
+    #filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #filters input,
+    #filters select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #filters label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
 }
 
 /* Introductie sectie */
 #intro {
-    background-color: #F7F2E7; /* Heel lichte crème-beige voor intro */
+    background-color: #F7F2E7;
     padding: 20px;
-    border: 1px solid #D1C6B1; /* Zachte zandkleur rand */
+    border: 1px solid #D1C6B1;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -94,12 +153,12 @@ main {
 
 #intro h2 {
     font-size: 2em;
-    color: #A7A47D; /* Olijfgroen pastel voor de titel */
+    color: #A7A47D;
 }
 
 #intro p {
     font-size: 1.2em;
-    color: #4E4A44; /* Donkergrijs voor de tekst */
+    color: #4E4A44;
 }
 
 /* Wat je kunt doen op deze website */
@@ -113,7 +172,7 @@ main {
 
 #kenmerken h3 {
     font-size: 1.8em;
-    color: #A7A47D; /* Olijfgroen pastel voor de koptekst */
+    color: #A7A47D;
     margin-bottom: 20px;
 }
 
@@ -130,7 +189,7 @@ main {
 
 /* Art Card styling */
 .art-card {
-    background-color: #F7F2E7; /* Pastel beige voor de kaarten */
+    background-color: #F7F2E7;
     width: 300px;
     padding: 20px;
     border-radius: 8px;
@@ -152,7 +211,7 @@ main {
 
 .art-card h3 {
     font-size: 1.2em;
-    color: #A7A47D; /* Olijfgroen pastel voor de kaart titel */
+    color: #A7A47D;
     margin-top: 10px;
 }
 
@@ -163,7 +222,7 @@ main {
 
 /* Favorite button styling */
 .favorite-btn {
-    background-color: #A7A47D; /* Olijfgroen pastel voor de knop */
+    background-color: #A7A47D;
     color: white;
     padding: 10px 15px;
     font-weight: bold;
@@ -176,7 +235,7 @@ main {
 }
 
 .favorite-btn:hover {
-    background-color: #B19A6A; /* Licht goud-beige bij hover */
+    background-color: #B19A6A;
 }
 
 /* Street art sectie */
@@ -191,7 +250,7 @@ main {
 
 /* Footer */
 footer {
-    background-color: #D1C6B1; /* Zachte zandkleur voor de footer */
+    background-color: #D1C6B1;
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -219,7 +278,7 @@ footer p {
     }
 
     .art-card {
-        width: 100%; 
+        width: 100%;
         margin: 10px 0;
     }
 
