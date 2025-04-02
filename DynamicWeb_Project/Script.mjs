@@ -22,7 +22,7 @@ async function fetchAndDisplayArtworks() {
             data.results.forEach(record => {
                 const artCard = document.createElement('section');
                 artCard.classList.add('art-card');
-                
+
                 // Titel van het kunstwerk
                 const title = document.createElement('h3');
                 title.textContent = record.name_of_the_work || 'Onbekend';
@@ -69,3 +69,27 @@ sortBy.addEventListener('change', fetchAndDisplayArtworks);
 
 // Roep de functie aan bij het laden van de pagina
 fetchAndDisplayArtworks();
+
+// Favorieten knop klik event
+favoriteButton.addEventListener('click', function () {
+    // Verkrijg de specifieke gegevens van het kunstwerk
+    const artwork = {
+        title: record.name_of_the_work || 'Onbekend',
+        artist: record.nom_de_l_artiste || 'Onbekend',
+        description: record.explanation || 'Geen beschrijving beschikbaar',
+        year: record.annee || 'Onbekend',
+        recordId: record.recordid
+    };
+
+    // Verkrijg de huidige lijst van favorieten uit localStorage, of maak een nieuwe array als deze nog niet bestaat
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+    // Voeg het kunstwerk toe aan de favorietenlijst
+    favorites.push(artwork);
+
+    // Sla de bijgewerkte lijst op in localStorage
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+
+    // Stuur de gebruiker naar de Favorietenpagina
+    window.location.href = 'Favoriet.html';
+});
