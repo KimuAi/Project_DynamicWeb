@@ -18,7 +18,7 @@
             </ul>
         </nav>
     </header>
-    
+
 
     <!-- Main content -->
     <main>
@@ -44,6 +44,25 @@
             <p>Artist: <span class="artist-name">Artiest Naam</span></p>
             <p>Beschrijving van het kunstwerk...</p>
             <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+        </section>
+
+        <!-- Filters en zoekfunctionaliteit -->
+        <section id="filters">
+            <label for="search-input">Zoek naar kunstwerken:</label>
+            <input type="text" id="search-input" placeholder="Zoek kunstwerken...">
+
+            <label for="filter-type">Filter op type:</label>
+            <select id="filter-type">
+                <option value="all">Alle types</option>
+                <option value="art">Kunst</option>
+                <option value="park">Parken</option>
+            </select>
+
+            <label for="sort-by">Sorteer op:</label>
+            <select id="sort-by">
+                <option value="title">Sorteer op Titel</option>
+                <option value="date">Sorteer op Datum</option>
+            </select>
         </section>
 
         <!-- Street Art Section -->
