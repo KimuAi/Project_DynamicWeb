@@ -86,7 +86,7 @@ main {
 #filters {
     display: flex;
     justify-content: space-between;
-    gap: 15px;
+    gap: 5px;
     padding: 10px;
     background-color: #F7F2E7;
     max-width: 1000px;
@@ -96,7 +96,6 @@ main {
 
 /* Styling voor labels */
 #filters label {
-    font-weight: bold;
     color: #4E4A44;
     width: 80px;
     display: inline-block;
@@ -114,13 +113,6 @@ main {
     width: 220px;
 }
 
-/* Focus-effect voor input- en select-velden */
-#filters input:focus,
-#filters select:focus {
-    border-color: #B19A6A;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
-}
 
 /* Responsief ontwerp voor kleinere schermen */
 @media (max-width: 768px) {
@@ -239,13 +231,39 @@ main {
 }
 
 /* Street art sectie */
+#street-art {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 40px auto; /* Zorgt ervoor dat de sectie in het midden van de pagina komt */
+    text-align: center;
+}
+
+#street-art h3 {
+    font-size: 2em;
+    color: #A7A47D; /* Olijfgroen pastel voor de titel */
+    margin-bottom: 20px;
+}
+
+#street-art p {
+    font-size: 1.2em;
+    color: #4E4A44;
+    margin-bottom: 30px;
+}
+
+/* Styling voor de data-container binnen street-art sectie */
 #data-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     gap: 20px;
-    margin-top: 40px;
-    padding-bottom: 40px;
+    justify-content: center;
+    width: 100%;
 }
 
 /* Footer */
