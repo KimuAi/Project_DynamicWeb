@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +11,14 @@
     <header>
         <nav>
             <ul>
-                <!-- Thema toggle button -->
-                <button id="thema-toggle">Schakel naar Donker Thema</button>
+                <!-- Theme toggle button -->
+                <button id="theme-toggle">Schakel naar Donker Thema</button>
                 <li><a href="Index.html">Home</a></li>
                 <li><a href="Favoriet.html">Favorieten</a></li>
-                <li><a href="InfromatieTab.html">Meer Informatie over Street Art</a></li> 
             </ul>
         </nav>
     </header>
-    
+
 
     <!-- Main content -->
     <main>
@@ -27,18 +26,17 @@
             <h2>Welkom bij BrusselsExplorer</h2>
             <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
         </section>
-        <hr>
 
         <!-- Filters en zoekfunctionaliteit -->
         <section id="filters">
             <label for="search-input">Zoek naar kunstwerken:</label>
             <input type="text" id="search-input" placeholder="Zoek kunstwerken...">
 
-            <label for="filter-type">Filter type:</label>
+            <label for="filter-type">Filter op type:</label>
             <select id="filter-type">
                 <option value="all">Alle types</option>
                 <option value="art">Kunst</option>
-                <option value="Loacatie">Locatie</option>
+                <option value="park">Parken</option>
             </select>
 
             <label for="sort-by">Sorteer op:</label>
@@ -48,26 +46,39 @@
             </select>
         </section>
 
-        <hr>
+
         <!-- Street Art Section -->
         <section id="street-art">
             <h3>Street Art in Brussel</h3>
             <p>Ontdek de mooiste street art in Brussel!</p>
-            <div id="data-container"></div> 
+            <div id="data-container"></div> <!-- Container voor dynamische kunstwerken -->
 
-            <!-- Art Card Section -->
-            <section class="art-card">
-                <h3>Title of Artwork</h3>
-                <p>Artist: <span class="artist-name">Artiest Naam</span></p>
-                <p>Beschrijving van het kunstwerk...</p>
-                <!-- Hier komt de datum -->
-                <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
-                <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
-            </section>
+
+<!-- Art Card Section -->
+    <section class="art-card">
+    <h3>Title of Artwork</h3>
+    <p>Artist: <span class="artist-name">Artiest Naam</span></p>
+    <p>Beschrijving van het kunstwerk...</p>
+    <!-- Hier komt de datum -->
+    <p><strong>Jaar:</strong> <span class="art-date">Onbekend</span></p> 
+    <button class="favorite-btn" data-artwork-id="1">Voeg toe aan favorieten</button>
+    </section>
+
+<!-- Container voor de dynamische kunstwerken -->
+<div id="data-container"></div>
+
+
         </section>
 
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy;
+        <p>&copy; 2025 BrusselsExplorer</p>
+    </footer>
+
+    <script src="Script.mjs"></script>
+
+</body>
+</html>
+ 
