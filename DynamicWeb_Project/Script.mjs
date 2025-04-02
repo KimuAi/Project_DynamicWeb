@@ -33,10 +33,10 @@ async function fetchAndDisplayArtworks() {
                 artistName.innerHTML = `Artist: <span class="artist-name">${record.nom_de_l_artiste || 'Onbekend'}</span>`;
                 artCard.appendChild(artistName);
 
-               /* // Beschrijving van het kunstwerk
+               // Beschrijving van het kunstwerk
                 const description = document.createElement('p');
-                description.textContent = record.description || 'Geen beschrijving beschikbaar';
-                artCard.appendChild(description);*/
+                description.textContent = record.explanation || 'Geen beschrijving beschikbaar';
+                artCard.appendChild(description);
 
                 // Jaar van het kunstwerk
                 const year = document.createElement('p');
