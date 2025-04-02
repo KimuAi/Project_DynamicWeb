@@ -1,44 +1,71 @@
-// De container waar we de kunstwerken gaan toevoegen
+// Declareer de DOM-elementen bovenaan
+const apiUrl = 'https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/streetart/records?limit=23';
 const dataContainer = document.getElementById('data-container');
+const searchInput = document.getElementById('search-input');
+const filterType = document.getElementById('filter-type');
+const sortBy = document.getElementById('sort-by');
 
-// Itereer door de records en maak voor elk kunstwerk een nieuwe HTML-sectie
-data.results.forEach(record => {
-    const artworkTitle = record.fields.titre; // Titel van het kunstwerk
-    const artistName = record.fields.nom_de_l_artiste; // Naam van de artiest
-    const description = record.fields.description || 'Geen beschrijving beschikbaar'; // Beschrijving, indien beschikbaar
-    const year = record.fields.annee || 'Onbekend'; // Jaar, indien beschikbaar
+// Haal en toon de kunstwerken
+async function fetchAndDisplayArtworks() {
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Netwerkprobleem of ongeldige API-antwoord');
+        }
+        const data = await response.json();
 
-    // Maak een nieuwe div voor elk kunstwerk
-    const artworkCard = document.createElement('section');
-    artworkCard.classList.add('art-card');
-    
-    // Voeg de titel van het kunstwerk toe
-    const titleElement = document.createElement('h3');
-    titleElement.textContent = artworkTitle;
-    artworkCard.appendChild(titleElement);
+        // Leeg de data-container voordat we nieuwe items invoegen
+        dataContainer.innerHTML = '';
 
-    // Voeg de naam van de artiest toe
-    const artistElement = document.createElement('p');
-    artistElement.innerHTML = `Artist: <span class="artist-name">${artistName}</span>`;
-    artworkCard.appendChild(artistElement);
+        if (data && data.results) {
+            // Voor elke record, maak een art-card en voeg deze toe aan de container
+            data.results.forEach(record => {
+                const artCard = document.createElement('section');
+                artCard.classList.add('art-card');
+                
+                // Titel van het kunstwerk
+                const title = document.createElement('h3');
+                title.textContent = record.name_of_the_work || 'Onbekend';
+                artCard.appendChild(title);
 
-    // Voeg de beschrijving toe
-    const descriptionElement = document.createElement('p');
-    descriptionElement.textContent = description;
-    artworkCard.appendChild(descriptionElement);
+                // Naam van de artiest
+                const artistName = document.createElement('p');
+                artistName.innerHTML = `Artist: <span class="artist-name">${record.nom_de_l_artiste || 'Onbekend'}</span>`;
+                artCard.appendChild(artistName);
 
-    // Voeg het jaar toe
-    const yearElement = document.createElement('p');
-    yearElement.innerHTML = `<strong>Jaar:</strong> <span class="art-date">${year}</span>`;
-    artworkCard.appendChild(yearElement);
+               /* // Beschrijving van het kunstwerk
+                const description = document.createElement('p');
+                description.textContent = record.description || 'Geen beschrijving beschikbaar';
+                artCard.appendChild(description);*/
 
-    // Voeg een favorietenknop toe
-    const favoriteButton = document.createElement('button');
-    favoriteButton.classList.add('favorite-btn');
-    favoriteButton.textContent = 'Voeg toe aan favorieten';
-    favoriteButton.dataset.artworkId = record.recordid;
-    artworkCard.appendChild(favoriteButton);
+                // Jaar van het kunstwerk
+                const year = document.createElement('p');
+                year.innerHTML = `<strong>Jaar:</strong> <span class="art-date">${record.annee || 'Onbekend'}</span>`;
+                artCard.appendChild(year);
 
-    // Voeg de kunstwerk sectie toe aan de container
-    dataContainer.appendChild(artworkCard);
-});
+                // Favorieten knop
+                const favoriteButton = document.createElement('button');
+                favoriteButton.classList.add('favorite-btn');
+                favoriteButton.textContent = 'Voeg toe aan favorieten';
+                favoriteButton.dataset.artworkId = record.recordid; // Zet een ID op de knop voor verdere verwerking
+                artCard.appendChild(favoriteButton);
+
+                // Voeg de art-card toe aan de container
+                dataContainer.appendChild(artCard);
+            });
+        } else {
+            dataContainer.innerHTML = '<p>Geen records gevonden</p>';
+        }
+    } catch (error) {
+        console.error('Er is iets mis gegaan:', error);
+        dataContainer.innerHTML = '<p>Er is iets mis gegaan bij het laden van de data.</p>';
+    }
+}
+
+// Filteren en sorteren op zoekopdracht en selecties
+searchInput.addEventListener('input', fetchAndDisplayArtworks);
+filterType.addEventListener('change', fetchAndDisplayArtworks);
+sortBy.addEventListener('change', fetchAndDisplayArtworks);
+
+// Roep de functie aan bij het laden van de pagina
+fetchAndDisplayArtworks();
