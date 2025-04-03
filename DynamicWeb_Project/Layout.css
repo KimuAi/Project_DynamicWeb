@@ -211,10 +211,10 @@ main {
 }
 
 .art-card img {
-  width: 100%; 
-  height: 200px; 
+  width: 100%;
+  height: 200px;
   /* Zorgt ervoor dat de afbeelding proportioneel blijft en de container vult */
-  object-fit: cover; 
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -235,12 +235,13 @@ main {
   color: white;
   padding: 10px 15px;
   font-weight: bold;
-  border: none;
+  border-color: #a7a47d; ;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
   font-size: 20px;
   transition: background-color 0.3s ease;
+  
 }
 
 .favorite-btn:hover {
@@ -259,14 +260,14 @@ main {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 1000px;
   /* Zorgt ervoor dat de sectie in het midden van de pagina komt */
-  margin: 40px auto; 
+  margin: 40px auto;
   text-align: center;
 }
 
 #street-art h3 {
   font-size: 2em;
-  color: #a7a47d; 
-  margin-bottom: 20px;
+  color: #a7a47d;
+  margin-bottom: px;
 }
 
 #street-art p {
