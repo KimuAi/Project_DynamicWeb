@@ -4,8 +4,7 @@ const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
-let debounceTimeout;
-const DEBOUNCE_DELAY = 30; // Tijd in milliseconden tussen elke invoer (bijv. 30ms)
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Selecteer de toggle knop en het body-element
@@ -23,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+let debounceTimeout;
+const DEBOUNCE_DELAY = 30; // Tijd in milliseconden tussen elke invoer (bijv. 30ms)
 
 searchInput.addEventListener('input', () => {
     // Annuleer de vorige timeout als de gebruiker snel typt
