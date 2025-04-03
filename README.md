@@ -118,6 +118,7 @@ brussels-explorer/
 
 ---
 
-## autuers
-HTML / CSS = Kimberley Thill
-JavaScript = Ludger cardoso
+## Auteurs
+**HTML / CSS**: Kimberley Thill - Verantwoordelijk voor het ontwerpen en ontwikkelen van de structuur en stijl van de webpagina's, inclusief de opmaak en lay-out van de elementen.
+
+**JavaScript**: Ludger Cardoso - Verantwoordelijk voor de dynamische functionaliteit van de webapplicatie, zoals het laden van gegevens en het implementeren van de thema-schakelaar, filters, etc...
