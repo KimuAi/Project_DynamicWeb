@@ -231,7 +231,7 @@ main {
 
 /* Favorite button styling */
 .favorite-btn {
-  background-color: #a7a47d;
+  background-color: #d1c6b1;
   color: white;
   padding: 10px 15px;
   font-weight: bold;
@@ -286,7 +286,7 @@ main {
 
 /* Footer */
 footer {
-  background-color: #d1c6b1;
+  background-color: white;
   text-align: center;
   padding: 20px;
   width: 100%;
@@ -342,57 +342,103 @@ footer p {
 
 /* Stijlen voor het donkere thema */
 body.dark-theme {
-  background-color: #2e2e2e; /* Donkere achtergrond */
-  color: #f7f2e7; /* Lichte tekstkleur */
+  background-color: #121212; /* Donkere achtergrond */
+  color: #ffffff; /* Witte tekstkleur voor de body */
 }
 
+/* Header en navigatiebalk in donkere modus */
 body.dark-theme header {
   background-color: #444; /* Donkere achtergrond voor de header */
+  color: #ffffff; /* Witte tekstkleur in de header */
 }
 
 body.dark-theme nav ul li a {
-  color: #f7f2e7; /* Lichte tekstkleur voor links */
+  color: #ffffff; /* Witte tekstkleur voor de links in de donkere modus */
 }
 
 body.dark-theme nav ul li a:hover {
-  color: #a7a47d; /* Hover kleur voor links */
+  color: #d1c6b1; /* Groene hoverkleur voor links in de donkere modus */
 }
 
+/* Filters sectie in donkere modus */
 body.dark-theme #filters {
-  background-color: #444; /* Donkere achtergrond voor filters */
+  background-color: #121212; /* Donkere achtergrond voor filters */
 }
 
 body.dark-theme #filters label,
 body.dark-theme #filters input,
 body.dark-theme #filters select {
-  background-color: #333; /* Donkere achtergrond voor inputvelden */
-  color: #f7f2e7; /* Lichte tekstkleur voor inputvelden */
-  border-color: #a7a47d; /* Kleur van de randen */
+  background-color: #121212; /* Donkere achtergrond voor de inputvelden */
+  color: #ffffff; /* Witte tekstkleur voor de labels en velden */
+  border-color: #d1c6b1; /* Groene randkleur voor inputvelden */
 }
 
+/* Intro sectie in donkere modus */
 body.dark-theme #intro {
   background-color: #444; /* Donkere achtergrond voor de intro sectie */
+  color: #ffffff; /* Witte tekstkleur voor de intro sectie */
 }
 
+body.dark-theme #intro h2 {
+  color: #d1c6b1; /* Groene kleur voor kopjes in de intro sectie */
+}
+
+body.dark-theme #intro p {
+  color: #ffffff; /* Witte kleur voor de paragraaf in de intro sectie */
+}
+
+/* Kenmerken sectie in donkere modus */
 body.dark-theme #kenmerken h3 {
-  color: #a7a47d; /* Behoud de groene kleur voor kopjes */
+  color: #d1c6b1; /* Groene kleur voor kopjes in de kenmerken sectie */
 }
 
-body.dark-theme footer {
-  background-color: #444; /* Donkere achtergrond voor de footer */
+body.dark-theme #kenmerken li {
+  color: #ffffff; /* Witte tekstkleur voor de items in de kenmerken lijst */
 }
 
-/* Art card in donker thema */
+/* Art Card in donkere modus */
 body.dark-theme .art-card {
-  background-color: #333;
-  color: #f7f2e7;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #121212; /* Donkere achtergrond voor de art card */
+  color: #ffffff; /* Witte tekstkleur voor de art card */
 }
 
+body.dark-theme .art-card h3 {
+  color: #d1c6b1; /* Groene kleur voor de kopjes in de art card */
+}
+
+body.dark-theme .art-card p {
+  color: #ffffff; /* Witte kleur voor de tekst in de art card */
+}
+
+/* Favorite button in donkere modus */
 body.dark-theme .favorite-btn {
-  background-color: #a7a47d;
+  background-color: #d1c6b1; /* Groene achtergrondkleur voor de button */
 }
 
 body.dark-theme .favorite-btn:hover {
-  background-color: #b19a6a;
+  background-color: #d1c6b1; /* Lichtere hoverkleur voor de button */
+}
+
+/* Street Art sectie in donkere modus */
+body.dark-theme #street-art {
+  background-color: #444; /* Donkere achtergrond voor street art sectie */
+  color: #ffffff; /* Witte tekstkleur voor de street art sectie */
+}
+
+body.dark-theme #street-art h3 {
+  color: #d1c6b1; /* Groene kleur voor kopjes in de street art sectie */
+}
+
+body.dark-theme #street-art p {
+  color: #ffffff; /* Witte tekstkleur voor de paragraaf in street art sectie */
+}
+
+/* Footer in donkere modus */
+body.dark-theme footer {
+  background-color: #444; /* Donkere achtergrond voor de footer */
+  color: #ffffff; /* Witte tekstkleur voor de footer */
+}
+
+footer p {
+  color: #d1c6b1; /* Witte tekstkleur voor de tekst in de footer */
 }
