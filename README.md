@@ -9,10 +9,14 @@
 1. [Beschrijving](#beschrijving)
 2. [Functies](#functies)
 3. [Kenmerken](#belangrijkste_kenmerken)
-4. [Installatie](#installatie)
-5. [Gebruik](#gebruik)
-6. [Bestandsstructuur](#bestandsstructuur)
-7. [Auteurs](#auteurs)
+4. [Gebruikte API's](#gebruikte-apis)
+5. [Installatiehandleiding](#installatiehandleiding)
+6. [Gebruik](#gebruik)
+7. [Bestandsstructuur](#bestandsstructuur)
+8. [Auteurs](#auteurs)
+9. [Screenshots](#screenshots)
+10. [Gebruikte Bronnen](#gebruikt-bronnen)
+11. [Taakverdeling binnen het team](#taakverdeling-binnen-het-team)
 
 ---
 
@@ -36,7 +40,17 @@
 
 ---
 
-## Installatie
+## Gebruikte API's
+
+1. **OpenStreetMap** voor de kaartfunctionaliteit van de applicatie:
+   - **Link**: [OpenStreetMap API](https://www.openstreetmap.org/copyright)
+   
+2. **Brussels Open Data API** voor het ophalen van kunstwerken in Brussel:
+   - **Link**: [Brussels Open Data API](https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/streetart/records?limit=23)
+
+---
+
+## Installatiehandleiding
 
 Volg de onderstaande stappen om de applicatie lokaal op je computer te draaien:
 
@@ -75,17 +89,7 @@ Zorg ervoor dat je de volgende software hebt geïnstalleerd:
 - Als je gebruik maakt van een externe API om kunstwerken en locaties op te halen, zorg ervoor dat je een geldige API-sleutel hebt en voeg deze toe aan je projectbestand (`Script.mjs` of een andere configuratie).
 - Volg de documentatie van de gebruikte API om te leren hoe je een API-sleutel kunt verkrijgen en configureren.
 
-**Problemen en Oplossingen**
-- Als je problemen ondervindt bij het openen van de bestanden, controleer dan of je de juiste bestandsstructuur hebt en of je een compatibele webbrowser gebruikt.
-- Als de dynamische inhoud niet laadt, controleer dan of je internetverbinding actief is en of je JavaScript goed werkt in je browser.
-
 ---
-
-Voor verdere hulp, kun je de [Issues-pagina op GitHub](https://github.com/jouwgebruikersnaam/brussels-explorer/issues) raadplegen.
-
-
----
-
 
 ## Gebruik
 
@@ -99,16 +103,14 @@ Voor verdere hulp, kun je de [Issues-pagina op GitHub](https://github.com/jouwge
    
 4. **Dynamische Data**: De gegevens over kunstwerken en hun locaties worden dynamisch geladen van een externe API. Dit betekent dat de applicatie altijd up-to-date is met de laatste informatie zonder dat handmatige updates nodig zijn.
 
-5. **Verken Verschillende Pagina's**: Naast de hoofdpagina (`index.html`), kun je ook de pagina `Locatie.html` openen om meer gedetailleerde    informatie over specifieke locaties en kunstwerken in Brussel te bekijken.
+5. **Verken Verschillende Pagina's**: Naast de hoofdpagina (`index.html`), kun je ook de pagina `Locatie.html` openen om meer gedetailleerde informatie over specifieke locaties en kunstwerken in Brussel te bekijken.
 
 6. **Gebruik in Verschillende Omgevingen**: De applicatie is volledig responsief, wat betekent dat het goed werkt op zowel desktop- als mobiele apparaten. Dit maakt het makkelijk om kunstwerken te ontdekken, waar je ook bent.
-
-
-Bij vragen of problemen, raadpleeg de [Issues-pagina](https://github.com/jouwgebruikersnaam/brussels-explorer/issues) op GitHub.
 
 ---
 
 ## Bestandsstructuur
+
 brussels-explorer/
 ├── index.html          # Hoofdpagina met een overzicht van de kunstwerken
 ├── Locatie.html        # Pagina met gedetailleerde informatie over kunstwerken
@@ -119,6 +121,31 @@ brussels-explorer/
 ---
 
 ## Auteurs
+
 **HTML / CSS**: Kimberley Thill - Verantwoordelijk voor het ontwerpen en ontwikkelen van de structuur en stijl van de webpagina's, inclusief de opmaak en lay-out van de elementen.
 
 **JavaScript**: Ludger Cardoso - Verantwoordelijk voor de dynamische functionaliteit van de webapplicatie, zoals het laden van gegevens en het implementeren van de thema-schakelaar, filters, etc...
+
+---
+
+## Screenshots
+
+(Voeg hier een of meerdere screenshots van de applicatie toe.)
+
+---
+
+## Gebruikte Bronnen
+
+1. **ChatGPT** - Gebruikt als inspiratiebron en hulpmiddel om fouten te vinden en op te lossen tijdens het ontwikkelproces.  
+   - **Link**: [ChatGPT](https://chatgpt.com)
+
+2. **Canvas (EHB)** - Theorie en lessen werden geraadpleegd als hulpmiddel bij de ontwikkeling van het project.  
+   - **Link**: [Canvas EHB](https://canvas.ehb.be/courses/38344)
+
+---
+
+## Taakverdeling binnen het team
+
+- **Kimberley Thill**: Verantwoordelijk voor het ontwerpen en ontwikkelen van de HTML/CSS-structuur, inclusief het visuele aspect van de applicatie.
+- **Ludger Cardoso**: Verantwoordelijk voor de JavaScript-functionaliteit, zoals het dynamisch laden van kunstwerken, locatie-informatie, en het implementeren van de thema-schakelaar.
+
