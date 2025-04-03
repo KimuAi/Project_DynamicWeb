@@ -194,7 +194,10 @@ main {
   transition: transform 0.3s ease;
   margin: 10px; 
   font-size: small;
-  
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
 }
 
 .art-card:hover {
@@ -219,6 +222,19 @@ main {
   font-size: 1em;;
 }
 
+#map {
+  height: 600px;
+  width: 100%;
+  border: 3px solid #a7a47d;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+#map:hover {
+  transform: scale(1.05);
+}
 
 h1 {
   text-align: center;
@@ -230,6 +246,7 @@ h1 {
 .favorite-btn {
   background-color: #d1c6b1;
   color: white;
+  padding: 10px 15px;
   font-weight: bold;
   border-color: #a7a47d;
   border-radius: 5px;
@@ -469,5 +486,3 @@ footer p {
     left: 2px;
   }
 }
-
-
