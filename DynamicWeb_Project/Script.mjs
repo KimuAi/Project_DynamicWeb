@@ -4,27 +4,6 @@ const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
-// Functie om Google Translate-element te initialiseren
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'nl',  // Standaardtaal (je kunt dit aanpassen)
-    includedLanguages: 'nl,en,fr',  // Voeg hier de talen toe die je wilt ondersteunen
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-
-// Laad het externe Google Translate script dynamisch
-function loadGoogleTranslateScript() {
-  const script = document.createElement('script');
-  script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-  script.type = 'text/javascript';
-  document.head.appendChild(script);
-}
-
-// Laad het script zodra de pagina geladen is
-document.addEventListener('DOMContentLoaded', () => {
-  loadGoogleTranslateScript();
-});
 
 
 document.addEventListener('DOMContentLoaded', () => {
