@@ -465,3 +465,70 @@ body.dark-theme footer {
 footer p {
   color: #d1c6b1; /* Witte tekstkleur voor de tekst in de footer */
 }
+
+/* Styling voor de Language Switcher container */
+#language-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f2e7;  /* Aangename lichte achtergrondkleur */
+  padding: 10px 20px;  /* Ruimte rondom de knoppen */
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lichte schaduw om het element uit te laten steken */
+  margin: 20px 0; /* Ruimte boven en onder de language switcher */
+}
+
+/* Styling voor de knoppen */
+#language-switcher button {
+  background-color: #d1c6b1; /* Achtergrondkleur van de knoppen */
+  color: #4e4a44;  /* Tekstkleur */
+  border: 1px solid #a7a47d;  /* Randkleur van de knoppen */
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;  /* Ruimte tussen de knoppen */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Voor een soepele hover effect */
+}
+
+/* Styling voor de Language Switcher container */
+#language-switcher {
+  position: absolute; /* Absoluut gepositioneerd ten opzichte van de viewport */
+  right: 20px;  /* Plaats de switcher rechts op de pagina */
+  top: 20px;    /* Voeg een beetje ruimte bovenaan toe */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f2e7;  /* Aangename lichte achtergrondkleur */
+  padding: 10px 20px;  /* Ruimte rondom de knoppen */
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Lichte schaduw om het element uit te laten steken */
+  margin: 20px 0; /* Ruimte boven en onder de language switcher */
+}
+
+/* Styling voor de knoppen */
+#language-switcher button {
+  background-color: #d1c6b1; /* Achtergrondkleur van de knoppen */
+  color: #4e4a44;  /* Tekstkleur */
+  border: 1px solid #a7a47d;  /* Randkleur van de knoppen */
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 10px;  /* Ruimte tussen de knoppen */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Voor een soepele hover effect */
+}
+
+/* Hover effect voor de knoppen */
+#language-switcher button:hover {
+  background-color: #a7a47d; /* Verandert naar een donkere kleur bij hover */
+  color: #fff; /* Witte tekstkleur bij hover */
+}
+
+/* Active knopstijl (optioneel, als je bijhoudt welke taal geselecteerd is) */
+#language-switcher button.active {
+  background-color: #4e4a44; /* Donkerder voor de actieve knop */
+  color: #fff;  /* Witte tekstkleur voor de actieve knop */
+  border-color: #4e4a44;  /* Dezelfde kleur als de achtergrond voor de actieve knop */
+}
+
