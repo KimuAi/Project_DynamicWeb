@@ -7,19 +7,21 @@ const sortBy = document.getElementById('sort-by');
 let debounceTimeout;
 const DEBOUNCE_DELAY = 30; // Tijd in milliseconden tussen elke invoer (bijv. 30ms)
 
-// Selecteer de toggle knop en het body-element
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body();
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecteer de toggle knop en het body-element
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-// Functie om het thema te wisselen
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-    // Pas de tekst van de knop aan afhankelijk van het thema
-    if (body.classList.contains('dark-theme')) {
-        themeToggle.textContent = 'Schakel naar Licht Thema';
-    } else {
-        themeToggle.textContent = 'Schakel naar Donker Thema';
-    }
+    // Functie om het thema te wisselen
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        // Pas de tekst van de knop aan afhankelijk van het thema
+        if (body.classList.contains('dark-theme')) {
+            themeToggle.textContent = 'Schakel naar Licht Thema';
+        } else {
+            themeToggle.textContent = 'Schakel naar Donker Thema';
+        }
+    });
 });
 
 searchInput.addEventListener('input', () => {
