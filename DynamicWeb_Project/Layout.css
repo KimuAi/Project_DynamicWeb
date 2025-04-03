@@ -235,13 +235,12 @@ main {
   color: white;
   padding: 10px 15px;
   font-weight: bold;
-  border-color: #a7a47d; ;
+  border-color: #a7a47d;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
   font-size: 20px;
   transition: background-color 0.3s ease;
-  
 }
 
 .favorite-btn:hover {
@@ -339,4 +338,61 @@ footer p {
   #intro {
     padding: 20px;
   }
+}
+
+/* Stijlen voor het donkere thema */
+body.dark-theme {
+  background-color: #2e2e2e; /* Donkere achtergrond */
+  color: #f7f2e7; /* Lichte tekstkleur */
+}
+
+body.dark-theme header {
+  background-color: #444; /* Donkere achtergrond voor de header */
+}
+
+body.dark-theme nav ul li a {
+  color: #f7f2e7; /* Lichte tekstkleur voor links */
+}
+
+body.dark-theme nav ul li a:hover {
+  color: #a7a47d; /* Hover kleur voor links */
+}
+
+body.dark-theme #filters {
+  background-color: #444; /* Donkere achtergrond voor filters */
+}
+
+body.dark-theme #filters label,
+body.dark-theme #filters input,
+body.dark-theme #filters select {
+  background-color: #333; /* Donkere achtergrond voor inputvelden */
+  color: #f7f2e7; /* Lichte tekstkleur voor inputvelden */
+  border-color: #a7a47d; /* Kleur van de randen */
+}
+
+body.dark-theme #intro {
+  background-color: #444; /* Donkere achtergrond voor de intro sectie */
+}
+
+body.dark-theme #kenmerken h3 {
+  color: #a7a47d; /* Behoud de groene kleur voor kopjes */
+}
+
+body.dark-theme footer {
+  background-color: #444; /* Donkere achtergrond voor de footer */
+}
+
+/* Art card in donker thema */
+body.dark-theme .art-card {
+  background-color: #333;
+  color: #f7f2e7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .favorite-btn {
+  background-color: #a7a47d;
+}
+
+body.dark-theme .favorite-btn:hover {
+  background-color: #b19a6a;
 }
