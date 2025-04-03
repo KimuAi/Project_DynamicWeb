@@ -1,0 +1,127 @@
+/* Algemene body instellingen */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f2e7;
+    color: #4e4a44;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Header en navigatiebalk */
+  header {
+    background-color: #d1c6b1;
+    width: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #4e4a44;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  nav ul li a:hover {
+    color: #a7a47d;
+  }
+  
+  #theme-toggle {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: #f7f2e7;
+    color: #4e4a44;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #theme-toggle:hover {
+    background-color: #4e4a44;
+    color: #f7f2e7;
+  }
+  
+  /* Zorg ervoor dat de header niet de inhoud verbergt */
+  body {
+    padding-top: 80px; /* Ruimte voor de fixed header */
+  }
+  
+  /* Titel styling */
+  h1 {
+    font-size: 2.5rem;
+    color: #4e4a44;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Kaart styling */
+  #map {
+    width: 100%;
+    height: 600px;
+    border: 3px solid #a7a47d;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling voor donkere modus */
+  body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  body.dark-theme header {
+    background-color: #444;
+  }
+  
+  body.dark-theme nav ul li a {
+    color: #ffffff;
+  }
+
+  
+  body.dark-theme #theme-toggle {
+    background-color: #444;
+    color: #ffffff;
+  }
+  
+  body.dark-theme #theme-toggle:hover {
+    background-color: #d1c6b1;
+    color: #121212;
+  }
+  
+  body.dark-theme h1 {
+    color: #d1c6b1;
+  }
+  
+  body.dark-theme #map {
+    border-color: #444;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+  }
+
+  
+  
