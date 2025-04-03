@@ -54,42 +54,92 @@ async function fetchAndDisplayArtworks() {
             
             // Sorteer de resultaten op basis van de geselecteerde sorteermethode
             filteredData = filteredData.sort((a, b) => {
-            // Als 'sortBy' op 'date' is ingesteld, sorteren we op jaartal
-            if (sortBy.value === 'date') {
-            // Sorteren op jaartal (Null komt onderaan)
-            const yearA = a.annee ? parseInt(a.annee) : Infinity; // Onbekend jaar naar onderen
-            const yearB = b.annee ? parseInt(b.annee) : Infinity;
+                // Als 'sortBy' op 'date' is ingesteld, sorteren we op jaartal
+                if (sortBy.value === 'date') {
+                // Sorteren op jaartal (Null komt onderaan)
+                const yearA = a.annee ? parseInt(a.annee) : Infinity; // Onbekend jaar naar onderen
+                const yearB = b.annee ? parseInt(b.annee) : Infinity;
 
-            if (yearA !== yearB) return yearA - yearB;
-            }
+                if (yearA !== yearB) return yearA - yearB;
+                }
 
-            // Als 'sortBy' op 'title' is ingesteld, sorteren we op titel
-            if (sortBy.value === 'title') {
-            // Functie om te controleren of de titel alleen symbolen of leeg is
-            const isEmptyOrSymbol = (str) => !str || /^[^\w]+$/.test(str);  // Reguliere expressie voor alleen symbolen of leeg
+                // Als 'sortBy' op 'title' is ingesteld, sorteren we op titel
+                if (sortBy.value === 'title') {
+                // Functie om te controleren of de titel alleen symbolen of leeg is
+                const isEmptyOrSymbol = (str) => !str || /^[^\w]+$/.test(str);  // Reguliere expressie voor alleen symbolen of leeg
 
-            const titleA = a.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
-            const titleB = b.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
+                const titleA = a.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
+                const titleB = b.name_of_the_work || ''; // Lege naam wordt als lege string behandeld
 
-            // Als een van de titels leeg of symbolen bevat, deze naar beneden verplaatsen
-            if (isEmptyOrSymbol(titleA) && !isEmptyOrSymbol(titleB)) {
-            return 1; // A komt onder B
-            }
-            if (!isEmptyOrSymbol(titleA) && isEmptyOrSymbol(titleB)) {
+                // Als een van de titels leeg of symbolen bevat, deze naar beneden verplaatsen
+                if (isEmptyOrSymbol(titleA) && !isEmptyOrSymbol(titleB)) {
+                return 1; // A komt onder B
+                }
+                if (!isEmptyOrSymbol(titleA) && isEmptyOrSymbol(titleB)) {
                 return -1; // B komt onder A
-            }
+                }
 
-            // Als de titels gelijk zijn, sorteren we op naam van de artiest
-            if (titleA === titleB) {
+                // Als de titels gelijk zijn, sorteren we op naam van de artiest
+                if (titleA === titleB) {
                 const artistA = a.nom_de_l_artiste || '';
                 const artistB = b.nom_de_l_artiste || '';
                 return artistA.localeCompare(artistB);
+                }
+
+                return titleA.localeCompare(titleB);
+            }
+            // Sorteer op artiestnaam
+            if (sortBy.value === 'artistnaam') {
+                const ArtistA = a.nom_de_l_artiste || '';
+                const ArtisteB = b.nom_de_l_artiste || '';
+
+                const isEmptyOrSymbol = (str) => !str || /^[^\w]+$/.test(str);
+
+                if (isEmptyOrSymbol(ArtistA) && !isEmptyOrSymbol(ArtisteB)) 
+                {
+                return 1; // A komt onder B
+                }
+                if (!isEmptyOrSymbol(ArtistA) && isEmptyOrSymbol(ArtistA)) 
+                {
+                return -1; // B komt onder A
+                }
+                
+                if (ArtistA === ArtisteB) {
+                    const artistA = a.name_of_the_work || '';
+                    const artistB = b.name_of_the_work || '';
+                    return artistA.localeCompare(artistB);
+                }
+
+                return ArtistA.localeCompare(ArtisteB);
+
             }
 
-            return titleA.localeCompare(titleB);
-            }
+            // Sorteer op artiestnaam
+            if (sortBy.value === 'adres') {
+                const AdresA = a.adresse || '';
+                const AdresB = b.adresse || '';
 
-            // Als er geen sorteerinstelling is, terug naar de standaard
+                const isEmptyOrSymbol = (str) => !str || /^[^\w]+$/.test(str);
+
+                if (isEmptyOrSymbol(AdresA) && !isEmptyOrSymbol(AdresB)) 
+                {
+                return 1; // A komt onder B
+                }
+                if (!isEmptyOrSymbol(AdresA) && isEmptyOrSymbol(AdresB)) 
+                {
+                return -1; // B komt onder A
+                }
+                
+                if (AdresA === AdresB) {
+                    const AdresA = a.name_of_the_work || '';
+                    const AdresB = b.name_of_the_work || '';
+                    return AdresA.localeCompare(AdresB);
+                }
+
+                return AdresA.localeCompare(AdresB);
+
+            }
+            
             return 0;
         });
 
