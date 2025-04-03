@@ -1,337 +1,341 @@
 /* Algemene opmaak voor de hele pagina */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #F7F2E7;
-    color: #4E4A44;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;  /* Zorg ervoor dat de body niet groter wordt dan de viewport */
-    overflow-x: hidden;  /* Voorkomt horizontaal scrollen */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f2e7;
+  color: #4e4a44;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%; /* Zorg ervoor dat de body niet groter wordt dan de viewport */
+  overflow-x: hidden; /* Voorkomt horizontaal scrollen */
 }
 
 /* Zorg ervoor dat padding en borders worden meegerekend in de breedte van een element */
-*, *:before, *:after {
-    box-sizing: border-box;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
 /* Header en navigatiebalk */
 header {
-    background-color: #D1C6B1;
-    padding: 20px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #d1c6b1;
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Knop voor thema wisselen aan de linkerkant van de header, in het midden */
 #theme-toggle {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 10px 10px;
-    background-color: #F7F2E7;
-    color: #4E4A44;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 10px 10px;
+  background-color: #f7f2e7;
+  color: #4e4a44;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 #theme-toggle:hover {
-    background-color: #4E4A44;
-    color: #F7F2E7;
+  background-color: #4e4a44;
+  color: #f7f2e7;
 }
 
 @media screen and (max-width: 768px) {
-    #theme-toggle {
-        position: relative;
-        top: 10px;
-        left: 2px;
-    }
+  #theme-toggle {
+    position: relative;
+    top: 10px;
+    left: 2px;
+  }
 }
 
 /* Navigatiebalk */
 nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+  display: inline;
+  margin: 0 20px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: #4E4A44;
-    font-size: 18px;
-    font-weight: bold;
+  text-decoration: none;
+  color: #4e4a44;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #B19A6A;
+  color: #b19a6a;
 }
 
 /* Main sectie */
 main {
-    padding: 20px;
-    margin: 0 auto;
-    max-width: 100%; /* Zorg ervoor dat de main-sectie niet groter wordt dan de viewport */
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%; /* Zorg ervoor dat de main-sectie niet groter wordt dan de viewport */
 }
 
 /* Styling voor het filters-sectie */
 #filters {
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    padding: 10px;
-    background-color: #F7F2E7;
-    max-width: 1000px;
-    margin: auto;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 10px;
+  background-color: #f7f2e7;
+  max-width: 1000px;
+  margin: auto;
+  flex-wrap: wrap;
 }
 
 /* Styling voor labels */
 #filters label {
-    color: #4E4A44;
-    width: 80px;
-    display: inline-block;
-    margin-bottom: 8px;
+  color: #4e4a44;
+  width: 80px;
+  display: inline-block;
+  margin-bottom: 8px;
 }
 
 /* Styling voor de input- en select-velden */
 #filters input,
 #filters select {
-    padding: 10px;
-    border: 1px solid #A7A47D;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: #ffffff;
-    width: 220px;
+  padding: 10px;
+  border: 1px solid #a7a47d;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: #ffffff;
+  width: 220px;
 }
 
 /* Responsief ontwerp voor kleinere schermen */
 @media (max-width: 768px) {
-    #filters {
-        flex-direction: column;
-        align-items: stretch;
-    }
+  #filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    #filters input,
-    #filters select {
-        width: 100%;
-        margin-bottom: 10px;
-    }
+  #filters input,
+  #filters select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 
-    #filters label {
-        width: 100%;
-        margin-bottom: 5px;
-    }
+  #filters label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
 }
 
 /* Introductie sectie */
 #intro {
-    background-color: #F7F2E7;
-    padding: 20px;
-    border: 1px solid #D1C6B1;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    text-align: center;
+  background-color: #f7f2e7;
+  padding: 20px;
+  border: 1px solid #d1c6b1;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  text-align: center;
 }
 
 #intro h2 {
-    font-size: 2em;
-    color: #A7A47D;
+  font-size: 2em;
+  color: #a7a47d;
 }
 
 #intro p {
-    font-size: 1.2em;
-    color: #4E4A44;
+  font-size: 1.2em;
+  color: #4e4a44;
 }
 
 /* Wat je kunt doen op deze website */
 #kenmerken {
-    padding: 20px;
-    text-align: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 #kenmerken h3 {
-    font-size: 1.8em;
-    color: #A7A47D;
-    margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #a7a47d;
+  margin-bottom: 20px;
 }
 
 #kenmerken ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 #kenmerken li {
-    font-size: 1.2em;
-    color: #4E4A44;
-    margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #4e4a44;
+  margin-bottom: 15px;
 }
 
 /* Art Card styling */
 .art-card {
-    background-color: #F7F2E7;
-    width: 300px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
+  background-color: #f7f2e7;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .art-card:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .art-card img {
-    width: 100%; /* Zorgt ervoor dat de afbeelding de breedte van de container volgt */
-    height: 200px; /* Pas deze waarde aan naar de gewenste hoogte */
-    object-fit: cover; /* Zorgt ervoor dat de afbeelding proportioneel blijft en de container vult */
-    border-radius: 8px;
+  width: 100%; 
+  height: 200px; 
+  /* Zorgt ervoor dat de afbeelding proportioneel blijft en de container vult */
+  object-fit: cover; 
+  border-radius: 8px;
 }
 
 .art-card h3 {
-    font-size: 1.2em;
-    color: #A7A47D;
-    margin-top: 10px;
+  font-size: 1.2em;
+  color: #a7a47d;
+  margin-top: 10px;
 }
 
 .art-card p {
-    color: #777;
-    font-size: 1em;
+  color: #777;
+  font-size: 1em;
 }
 
 /* Favorite button styling */
 .favorite-btn {
-    background-color: #A7A47D;
-    color: white;
-    padding: 10px 15px;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    font-size: 20px;
-    transition: background-color 0.3s ease;
+  background-color: #a7a47d;
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .favorite-btn:hover {
-    background-color: #B19A6A;
+  background-color: #b19a6a;
 }
 
 /* Street art sectie */
 #street-art {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 1000px;
-    margin: 40px auto; /* Zorgt ervoor dat de sectie in het midden van de pagina komt */
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  /* Zorgt ervoor dat de sectie in het midden van de pagina komt */
+  margin: 40px auto; 
+  text-align: center;
 }
 
 #street-art h3 {
-    font-size: 2em;
-    color: #A7A47D; /* Olijfgroen pastel voor de titel */
-    margin-bottom: 20px;
+  font-size: 2em;
+  color: #a7a47d; 
+  margin-bottom: 20px;
 }
 
 #street-art p {
-    font-size: 1.2em;
-    color: #4E4A44;
-    margin-bottom: 30px;
+  font-size: 1.2em;
+  color: #4e4a44;
+  margin-bottom: 30px;
 }
 
 /* Styling voor de data-container binnen street-art sectie */
 #data-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
 }
 
 /* Footer */
 footer {
-    background-color: #D1C6B1;
-    text-align: center;
-    padding: 20px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
+  background-color: #d1c6b1;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
 }
 
 footer p {
-    font-size: 1em;
-    color: white;
+  font-size: 1em;
+  color: white;
 }
 
 /* Responsieve aanpassingen voor kleinere schermen */
 @media (max-width: 768px) {
-    #intro h2 {
-        font-size: 1.5em;
-    }
+  #intro h2 {
+    font-size: 1.5em;
+  }
 
-    #kenmerken h3 {
-        font-size: 1.2em;
-    }
+  #kenmerken h3 {
+    font-size: 1.2em;
+  }
 
-    #kenmerken li {
-        font-size: 1em;
-    }
+  #kenmerken li {
+    font-size: 1em;
+  }
 
-    .art-card {
-        width: 100%;
-        margin: 10px 0;
-    }
+  .art-card {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    .art-card h3 {
-        font-size: 1.2em;
-    }
+  .art-card h3 {
+    font-size: 1.2em;
+  }
 
-    #data-container {
-        justify-content: center;
-    }
+  #data-container {
+    justify-content: center;
+  }
 
-    #kenmerken ul {
-        text-align: left;
-        padding-left: 20px;
-    }
+  #kenmerken ul {
+    text-align: left;
+    padding-left: 20px;
+  }
 
-    #kenmerken li {
-        font-size: 0.9em;
-    }
+  #kenmerken li {
+    font-size: 0.9em;
+  }
 
-    #intro {
-        padding: 20px;
-    }
+  #intro {
+    padding: 20px;
+  }
 }

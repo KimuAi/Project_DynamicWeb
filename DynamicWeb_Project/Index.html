@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage</title>
-    <link rel="stylesheet" href="Layout.css">
-</head>
-<body>
+    <link rel="stylesheet" href="Layout.css" />
+  </head>
+  <body>
     <!-- Header Section (met aparte navigatie en achtergrond) -->
     <header>
-        <nav>
-            <ul>
-                <!-- Theme toggle button -->
-                <button id="theme-toggle">Schakel naar Donker Thema</button>
-                <li><a href="Index.html">Home</a></li>
-                <li><a href="Favoriet.html">Favorieten</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <!-- Theme toggle button -->
+          <button id="theme-toggle">Schakel naar Donker Thema</button>
+          <li><a href="Index.html">Home</a></li>
+          <li><a href="Favoriet.html">Favorieten</a></li>
+          <li><a href="Locatie.html">Locatie</a></li>
+        </ul>
+      </nav>
     </header>
-
 
     <!-- Main content -->
     <main>
-        <section id="intro">
-            <h2>Welkom bij BrusselsExplorer</h2>
-            <p>Een interactieve website om de mooiste locaties van Brussel te ontdekken! Filter, sorteer en sla jouw favoriete plekken op!</p>
-        </section>
+      <section id="intro">
+        <h2>Welkom bij BrusselsExplorer</h2>
+        <p>
+          Een interactieve website om de mooiste locaties van Brussel te
+          ontdekken! Filter, sorteer en sla jouw favoriete plekken op!
+        </p>
+      </section>
 
-        <!-- Filters en zoekfunctionaliteit -->
-        <section id="filters">
-            <label for="search-input">Zoek naar kunstwerken:</label>
-            <input type="text" id="search-input" placeholder="Zoek kunstwerken...">
+      <!-- Filters en zoekfunctionaliteit -->
+      <section id="filters">
+        <label for="search-input">Zoek naar kunstwerken:</label>
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Zoek kunstwerken..."
+        />
 
-            <label for="filter-type">Filter op:</label>
-            <select id="filter-type">
-                <option value="all">Alle types kunstwerken</option>
-                <option value="metnaam">Filter op kunstwerk namen</option>
-                <option value="zondernaam">Filter op onbekende kunstwerken </option>
-            </select>
+        <label for="filter-type">Filter op:</label>
+        <select id="filter-type">
+          <option value="all">Alle types kunstwerken</option>
+          <option value="metnaam">Filter op kunstwerk namen</option>
+          <option value="zondernaam">Filter op onbekende kunstwerken</option>
+        </select>
 
-            <label for="sort-by">Sorteer op:</label>
-            <select id="sort-by">
-                <option value="title">Sorteer op Titel</option>
-                <option value="date">Sorteer op jaar</option>
-                <option value="artistnaam">Sorteer op artistnaam</option>
-                <option value="adres">Sorteer op adres</option>
-            </select>
-        </section>
+        <label for="sort-by">Sorteer op:</label>
+        <select id="sort-by">
+          <option value="title">Sorteer op Titel</option>
+          <option value="date">Sorteer op jaar</option>
+          <option value="artistnaam">Sorteer op artistnaam</option>
+          <option value="adres">Sorteer op adres</option>
+        </select>
+      </section>
 
+      <!-- Street Art Section -->
+      <section id="street-art">
+        <h3>Street Art in Brussel</h3>
+        <p>Ontdek de mooiste street art in Brussel!</p>
 
-        <!-- Street Art Section -->
-        <section id="street-art">
-            <h3>Street Art in Brussel</h3>
-            <p>Ontdek de mooiste street art in Brussel!</p>
-
-            <!-- Container voor dynamische kunstwerken -->
-            <div id="data-container"></div> 
-
-        </section>
-        
+        <!-- Container voor dynamische kunstwerken -->
+        <div id="data-container"></div>
+      </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2025 BrusselsExplorer</p>
+      <p>&copy; 2025 BrusselsExplorer</p>
     </footer>
 
     <script src="Script.mjs"></script>
-
-</body>
+  </body>
 </html>
-
- 
