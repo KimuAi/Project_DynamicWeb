@@ -73,7 +73,7 @@ console.log(id + " entered function")
           favoriteButton.textContent = "Verwijder toe aan favorieten";
           favoriteButton.classList.add("addfav");
         } else {
-          favoriteButton.classList.add("remofav");
+          favoriteButton.classList.add("removefav");
           favoriteButton.textContent = "Voeg toe aan favorieten";
         }
         favoriteButton.dataset.artworkId = id; // Zet een ID op de knop voor verdere verwerking
