@@ -15,7 +15,7 @@ do {
    console.log(sessionStorage.getItem(id));
    showFavorites(record, id);}
    //filteredData(record)
-}  while (id < 23);
+}  while (id < 24);
 
 // Voor elke record, maak een art-card en voeg deze toe aan de container
 function showFavorites(record, id) {
