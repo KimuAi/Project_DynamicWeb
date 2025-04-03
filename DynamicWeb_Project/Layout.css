@@ -234,6 +234,7 @@ h1 {
   border-color: #a7a47d;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 10px;
   font-size: 15px;
   transition: background-color 0.3s ease;
   
@@ -468,3 +469,25 @@ footer p {
     left: 2px;
   }
 }
+
+/* Pas het uiterlijk van het Google Translate-element aan */
+#google_translate_element {
+  font-family: Arial, sans-serif;  /* Verander het lettertype */
+  font-size: 16px;  /* Pas de tekstgrootte aan */
+}
+
+/* Pas de select box aan */
+#google_translate_element select {
+  background-color: #007bff;  /* Verander de achtergrondkleur */
+  color: white;  /* Verander de tekstkleur */
+  font-size: 16px;  /* Pas de tekstgrootte aan */
+  border: 1px solid #0056b3;  /* Voeg een rand toe */
+  border-radius: 5px;  /* Maak de hoeken afgerond */
+  padding: 5px 10px;  /* Voeg wat padding toe */
+}
+
+/* Pas de hover-staat aan voor de select box */
+#google_translate_element select:hover {
+  background-color: #0056b3;  /* Verander de achtergrondkleur bij hover */
+}
+ 
