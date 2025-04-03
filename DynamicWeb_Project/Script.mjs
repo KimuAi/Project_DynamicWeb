@@ -4,68 +4,68 @@ const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
-document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
-    const languageSelect = document.getElementById('language-select'); // Taalselectie
-    const translations = {
-        nl: {
-            themeButtonDark: 'Schakel naar Licht Thema',
-            themeButtonLight: 'Schakel naar Donker Thema',
-            home: 'Home',
-            location: 'Locatie',
-            favorites: 'Favoriet',
-            intro: 'Hier zie je de kunstwerken die je hebt gekozen als favorieten!'
-        },
-        en: {
-            themeButtonDark: 'Switch to Light Theme',
-            themeButtonLight: 'Switch to Dark Theme',
-            home: 'Home',
-            location: 'Location',
-            favorites: 'Favorites',
-            intro: 'Here are the artworks you have chosen as favorites!'
-        },
-        fr: {
-            themeButtonDark: 'Passer au thème clair',
-            themeButtonLight: 'Passer au thème sombre',
-            home: 'Accueil',
-            location: 'Lieu',
-            favorites: 'Favoris',
-            intro: 'Voici les œuvres d\'art que vous avez choisies comme favoris!'
-        }
-    };
 
-    // Functie om de taal in te stellen
-    function setLanguage(language) {
-        localStorage.setItem('language', language);  // Sla de taal op in localStorage
-        document.querySelector('h2').textContent = translations[language].intro;
-        themeToggle.textContent = body.classList.contains('dark-theme') 
-            ? translations[language].themeButtonDark 
-            : translations[language].themeButtonLight;
-        document.querySelector('a[href="Index.html"]').textContent = translations[language].home;
-        document.querySelector('a[href="Locatie.html"]').textContent = translations[language].location;
-        document.querySelector('a[href="Favoriet.html"]').textContent = translations[language].favorites;
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+const languageSelect = document.getElementById('language-select'); // Taalselectie
+const translations = {
+    nl: {
+        themeButtonDark: 'Schakel naar Licht Thema',
+        themeButtonLight: 'Schakel naar Donker Thema',
+        home: 'Home',
+        location: 'Locatie',
+        favorites: 'Favoriet',
+        intro: 'Hier zie je de kunstwerken die je hebt gekozen als favorieten!'
+    },
+    en: {
+        themeButtonDark: 'Switch to Light Theme',
+        themeButtonLight: 'Switch to Dark Theme',
+        home: 'Home',
+        location: 'Location',
+        favorites: 'Favorites',
+        intro: 'Here are the artworks you have chosen as favorites!'
+    },
+    fr: {
+        themeButtonDark: 'Passer au thème clair',
+        themeButtonLight: 'Passer au thème sombre',
+        home: 'Accueil',
+        location: 'Lieu',
+        favorites: 'Favoris',
+        intro: 'Voici les œuvres d\'art que vous avez choisies comme favoris!'
     }
+};
 
-    // Laad de opgeslagen taal als deze er is
-    const savedLanguage = localStorage.getItem('language') || 'nl';  // Standaard Nederlands
-    languageSelect.value = savedLanguage;
-    setLanguage(savedLanguage);
+// Functie om de taal in te stellen
+function setLanguage(language) {
+    localStorage.setItem('language', language);  // Sla de taal op in localStorage
+    document.querySelector('h2').textContent = translations[language].intro;
+    themeToggle.textContent = body.classList.contains('dark-theme')
+        ? translations[language].themeButtonDark
+        : translations[language].themeButtonLight;
+    document.querySelector('a[href="Index.html"]').textContent = translations[language].home;
+    document.querySelector('a[href="Locatie.html"]').textContent = translations[language].location;
+    document.querySelector('a[href="Favoriet.html"]').textContent = translations[language].favorites;
+}
 
-    // Wanneer de taal wordt gewijzigd, pas de inhoud aan
-    languageSelect.addEventListener('change', (event) => {
-        setLanguage(event.target.value);
-    });
+// Laad de opgeslagen taal als deze er is
+const savedLanguage = localStorage.getItem('language') || 'nl';  // Standaard Nederlands
+languageSelect.value = savedLanguage;
+setLanguage(savedLanguage);
 
-    // Functie om het thema te wisselen
-    themeToggle.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
-        const currentLanguage = localStorage.getItem('language') || 'nl';
-        themeToggle.textContent = body.classList.contains('dark-theme') 
-            ? translations[currentLanguage].themeButtonDark 
-            : translations[currentLanguage].themeButtonLight;
-    });
+// Wanneer de taal wordt gewijzigd, pas de inhoud aan
+languageSelect.addEventListener('change', (event) => {
+    setLanguage(event.target.value);
 });
+
+// Functie om het thema te wisselen
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    const currentLanguage = localStorage.getItem('language') || 'nl';
+    themeToggle.textContent = body.classList.contains('dark-theme')
+        ? translations[currentLanguage].themeButtonDark
+        : translations[currentLanguage].themeButtonLight;
+});
+
 
 
 let debounceTimeout;
@@ -226,40 +226,133 @@ async function fetchAndDisplayArtworks() {
                     artCard.appendChild(image);
                 }
 
-                // Titel van het kunstwerk
-                const title = document.createElement('h3');
-                title.textContent = record.name_of_the_work || 'Onbekend';
-                artCard.appendChild(title);
+                const translations = {
+                    nl: {
+                        artist: 'Artiest',
+                        description: 'Beschrijving',
+                        address: 'Adres',
+                        year: 'Jaar',
+                        addFavorite: 'Voeg toe aan favorieten',
+                        removeFavorite: 'Verwijder uit favorieten',
+                        unknown: 'Onbekend'
+                    },
+                    en: {
+                        artist: 'Artist',
+                        description: 'Description',
+                        address: 'Address',
+                        year: 'Year',
+                        addFavorite: 'Add to favorites',
+                        removeFavorite: 'Remove from favorites',
+                        unknown: 'Unknown'
+                    },
+                    fr: {
+                        artist: 'Artiste',
+                        description: 'Description',
+                        address: 'Adresse',
+                        year: 'Année',
+                        addFavorite: 'Ajouter aux favoris',
+                        removeFavorite: 'Retirer des favoris',
+                        unknown: 'Inconnu'
+                    }
+                };
 
-                // Naam van de artiest
-                const artistName = document.createElement('p');
-                artistName.innerHTML = `<strong>Artist:</strong> <span class="artist-name">${record.nom_de_l_artiste || 'Onbekend'}</span>`;
-                artCard.appendChild(artistName);
 
-                // Beschrijving van het kunstwerk
-                const description = document.createElement('p');
-                description.innerHTML = `<strong>beschrijving:</strong> <span class="art-beschrijving">${record.explanation || 'Geen beschrijving beschikbaa'}</span>`;
-                artCard.appendChild(description);
+                // Verkrijg de geselecteerde taal
+                const currentLanguage = localStorage.getItem('language') || 'nl';  // Standaard Nederlands
 
-                // Locatie van het kunstwerk
-                const location = document.createElement('p');
-                location.innerHTML = `<strong>Adres:</strong> <span class="art-location">${record.adresse || 'Onbekend'}</span>`;
-                artCard.appendChild(location);
+                // Functie om te controleren of een kunstwerk in de favorieten staat
+                function isFavorite(artworkId) {
+                    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+                    return favorites.includes(artworkId);
+                }
 
-                // Jaar van het kunstwerk
-                const year = document.createElement('p');
-                year.innerHTML = `<strong>Jaar:</strong> <span class="art-date">${record.annee || 'Onbekend'}</span>`;
-                artCard.appendChild(year);
+               // Functie om een kunstwerk toe te voegen of te verwijderen uit de favorieten
+                function toggleFavorite(artworkId) {
+                    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-                // Favorieten knop
-                const favoriteButton = document.createElement('button');
-                favoriteButton.classList.add('favorite-btn');
-                favoriteButton.textContent = 'Voeg toe aan favorieten';
-                favoriteButton.dataset.artworkId = record.recordid; // Zet een ID op de knop voor verdere verwerking
-                artCard.appendChild(favoriteButton);
+                    if (favorites.includes(artworkId)) {
+                        // Verwijder het kunstwerk uit de favorieten
+                        favorites = favorites.filter(id => id !== artworkId);
+                    } else {
+                        // Voeg het kunstwerk toe aan de favorieten
+                        favorites.push(artworkId);
+                    }
 
-                // Voeg de art-card toe aan de container
-                dataContainer.appendChild(artCard);
+                    // Sla de favorieten op in localStorage
+                    localStorage.setItem('favorites', JSON.stringify(favorites));
+                }
+
+                // Voor elke record, maak een art-card en voeg deze toe aan de container
+                filteredData.forEach(record => {
+                    const artCard = document.createElement('section');
+                    artCard.classList.add('art-card');
+
+                    // Controleer of er een afbeelding beschikbaar is en voeg deze toe
+                    if (record.photo && record.photo.url) {
+                        const image = document.createElement('img');
+                        image.src = record.photo.url;
+                        image.alt = record.name_of_the_work || translations[currentLanguage].unknown;  // Vertaal 'Onbekend'
+                        image.classList.add('art-image');
+                        artCard.appendChild(image);
+                    }
+
+                    // Titel van het kunstwerk
+                    const title = document.createElement('h3');
+                    title.textContent = record.name_of_the_work || translations[currentLanguage].unknown;  // Vertaal 'Onbekend'
+                    artCard.appendChild(title);
+
+                    // Naam van de artiest
+                    const artistName = document.createElement('p');
+                    artistName.innerHTML = `<strong>${translations[currentLanguage].artist}:</strong> <span class="artist-name">${record.nom_de_l_artiste || translations[currentLanguage].unknown}</span>`; // Vertaal 'Onbekend'
+                    artCard.appendChild(artistName);
+
+                    // Beschrijving van het kunstwerk
+                    const description = document.createElement('p');
+                    description.innerHTML = `<strong>${translations[currentLanguage].description}:</strong> <span class="art-beschrijving">${record.explanation || translations[currentLanguage].unknown}</span>`; // Vertaal 'Onbekend'
+                    artCard.appendChild(description);
+
+                    // Locatie van het kunstwerk
+                    const location = document.createElement('p');
+                    location.innerHTML = `<strong>${translations[currentLanguage].address}:</strong> <span class="art-location">${record.adresse || translations[currentLanguage].unknown}</span>`; // Vertaal 'Onbekend'
+                    artCard.appendChild(location);
+
+                    // Jaar van het kunstwerk
+                    const year = document.createElement('p');
+                    year.innerHTML = `<strong>${translations[currentLanguage].year}:</strong> <span class="art-date">${record.annee || translations[currentLanguage].unknown}</span>`; // Vertaal 'Onbekend'
+                    artCard.appendChild(year);
+
+                    // Favorieten knop
+                    const favoriteButton = document.createElement('button');
+                    favoriteButton.classList.add('favorite-btn');
+
+                    // Zet de tekst van de knop op basis van of het kunstwerk al een favoriet is
+                    if (isFavorite(record.recordid)) {
+                        favoriteButton.textContent = translations[currentLanguage].removeFavorite || 'Verwijder uit favorieten';
+                    } else {
+                        favoriteButton.textContent = translations[currentLanguage].addFavorite || 'Voeg toe aan favorieten';
+                    }
+
+                    favoriteButton.dataset.artworkId = record.recordid; // Zet een ID op de knop voor verdere verwerking
+
+                    // Voeg een event listener toe om de favorieten status te toggelen
+                    favoriteButton.addEventListener('click', () => {
+                        toggleFavorite(record.recordid);
+
+                        // Werk de tekst van de knop bij na het toevoegen/verwijderen
+                        if (isFavorite(record.recordid)) {
+                            favoriteButton.textContent = translations[currentLanguage].removeFavorite || 'Verwijder uit favorieten';
+                        } else {
+                            favoriteButton.textContent = translations[currentLanguage].addFavorite || 'Voeg toe aan favorieten';
+                        }
+                    });
+
+                    artCard.appendChild(favoriteButton);
+
+                    // Voeg de art-card toe aan de container
+                    dataContainer.appendChild(artCard);
+                });
+
+
             });
 
             // Als er geen gefilterde data is
