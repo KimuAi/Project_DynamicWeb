@@ -130,9 +130,37 @@ brussels-explorer/
 
 ## Screenshots
 
-(Voeg hier een of meerdere screenshots van de applicatie toe.)
+![alt text](image.png)
+Dit is de nav waar jij naar veschillende pagina kan gaan (Home, locatie, favoriet)
+![alt text](image-1.png)
+![alt text](image-2.png)
+schakel de thema van licht naar donker en van donker naar licht
+![alt text](image-3.png)
+![alt text](image-4.png)
 
----
+![alt text](image-5.png)
+kies het tael tussen NL,FR EN EN
+
+
+![alt text](image-6.png)
+zoekbalk, jij mag daar de naam van het kunstnaar, kunstnaam, adres of jaar zoeken.
+
+![alt text](image-7.png)
+filter welke sorteen kunst wilt u zien, deze die zonder kusntnaam, met  kunstnaam of u favoriet
+
+![alt text](image-8.png)
+sorteer de kunsten op basis van de Titel, Kunstenaar, Adres of Het Jaar.
+
+![alt text](image-9.png)
+![alt text](image-10.png)
+in de pagina loctaie kan u uw huidige locatie zien en de kunsten locaties met u info in een popup.
+
+![alt text](image-11.png)
+![alt text](image-13.png)
+Hier kan u een kunst als favorieten toe voegen of verwijderen.
+
+![alt text](image-12.png)
+dit is de pagina waar jou favorieten in komen. 
 
 ## Gebruikte Bronnen
 
