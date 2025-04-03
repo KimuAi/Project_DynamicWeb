@@ -71,9 +71,9 @@ console.log(id + " entered function")
         favoriteButton.classList.add("favorite-btn");
         if (sessionStorage.getItem(id) != null) {
           favoriteButton.textContent = "Verwijder toe aan favorieten";
-          favoriteButton.classList.add("removefav");
-        } else {
           favoriteButton.classList.add("addfav");
+        } else {
+          favoriteButton.classList.add("remofav");
           favoriteButton.textContent = "Voeg toe aan favorieten";
         }
         favoriteButton.dataset.artworkId = id; // Zet een ID op de knop voor verdere verwerking

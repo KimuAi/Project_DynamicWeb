@@ -283,9 +283,9 @@ async function fetchAndDisplayArtworks() {
         favoriteButton.classList.add("favorite-btn");
         if (sessionStorage.getItem(recordid) != null) {
           favoriteButton.textContent = "Verwijder toe aan favorieten";
-          favoriteButton.classList.add("removefav");
-        } else {
           favoriteButton.classList.add("addfav");
+        } else {
+          favoriteButton.classList.add("removefav");
           favoriteButton.textContent = "Voeg toe aan favorieten";
         }
         favoriteButton.dataset.artworkId = recordid; // Zet een ID op de knop voor verdere verwerking
