@@ -5,7 +5,7 @@ const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
 let debounceTimeout;
-const DEBOUNCE_DELAY = 300; // Tijd in milliseconden tussen elke invoer (bijv. 300ms)
+const DEBOUNCE_DELAY = 30; // Tijd in milliseconden tussen elke invoer (bijv. 30ms)
 
 searchInput.addEventListener('input', () => {
     // Annuleer de vorige timeout als de gebruiker snel typt
@@ -205,6 +205,7 @@ async function fetchAndDisplayArtworks() {
         dataContainer.innerHTML = '<p>Er is iets mis gegaan bij het laden van de data.</p>';
     }
 }
+
 
 // Event listeners voor filtering en sorteren
 searchInput.addEventListener('input', fetchAndDisplayArtworks); // Filter op zoekterm
