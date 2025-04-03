@@ -1,6 +1,23 @@
 // API URL voor kunstwerken
 const apiUrl = 'https://opendata.brussels.be/api/explore/v2.1/catalog/datasets/streetart/records?limit=23';
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Selecteer de toggle knop en het body-element
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Functie om het thema te wisselen
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        // Pas de tekst van de knop aan afhankelijk van het thema
+        if (body.classList.contains('dark-theme')) {
+            themeToggle.textContent = 'Schakel naar Licht Thema';
+        } else {
+            themeToggle.textContent = 'Schakel naar Donker Thema';
+        }
+    });
+});
+
 // De kaart initialiseren met Leaflet.js
 const map = L.map('map').setView([50.8503, 4.3517], 13); // Standaard voor Brussel
 
