@@ -38,8 +38,6 @@
 
 ## Installatie
 
-## Installatie
-
 Volg de onderstaande stappen om de applicatie lokaal op je computer te draaien:
 
 **Voorwaarden**
@@ -109,8 +107,6 @@ Voor verdere hulp, kun je de [Issues-pagina op GitHub](https://github.com/jouwge
 Bij vragen of problemen, raadpleeg de [Issues-pagina](https://github.com/jouwgebruikersnaam/brussels-explorer/issues) op GitHub.
 
 ---
-
-
 
 ## Bestandsstructuur
 brussels-explorer/
