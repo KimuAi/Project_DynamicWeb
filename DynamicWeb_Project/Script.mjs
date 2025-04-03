@@ -4,24 +4,69 @@ const searchInput = document.getElementById('search-input');
 const filterType = document.getElementById('filter-type');
 const sortBy = document.getElementById('sort-by');
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Selecteer de toggle knop en het body-element
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
+    const languageSelect = document.getElementById('language-select'); // Taalselectie
+    const translations = {
+        nl: {
+            themeButtonDark: 'Schakel naar Licht Thema',
+            themeButtonLight: 'Schakel naar Donker Thema',
+            home: 'Home',
+            location: 'Locatie',
+            favorites: 'Favoriet',
+            intro: 'Hier zie je de kunstwerken die je hebt gekozen als favorieten!'
+        },
+        en: {
+            themeButtonDark: 'Switch to Light Theme',
+            themeButtonLight: 'Switch to Dark Theme',
+            home: 'Home',
+            location: 'Location',
+            favorites: 'Favorites',
+            intro: 'Here are the artworks you have chosen as favorites!'
+        },
+        fr: {
+            themeButtonDark: 'Passer au thème clair',
+            themeButtonLight: 'Passer au thème sombre',
+            home: 'Accueil',
+            location: 'Lieu',
+            favorites: 'Favoris',
+            intro: 'Voici les œuvres d\'art que vous avez choisies comme favoris!'
+        }
+    };
+
+    // Functie om de taal in te stellen
+    function setLanguage(language) {
+        localStorage.setItem('language', language);  // Sla de taal op in localStorage
+        document.querySelector('h2').textContent = translations[language].intro;
+        themeToggle.textContent = body.classList.contains('dark-theme') 
+            ? translations[language].themeButtonDark 
+            : translations[language].themeButtonLight;
+        document.querySelector('a[href="Index.html"]').textContent = translations[language].home;
+        document.querySelector('a[href="Locatie.html"]').textContent = translations[language].location;
+        document.querySelector('a[href="Favoriet.html"]').textContent = translations[language].favorites;
+    }
+
+    // Laad de opgeslagen taal als deze er is
+    const savedLanguage = localStorage.getItem('language') || 'nl';  // Standaard Nederlands
+    languageSelect.value = savedLanguage;
+    setLanguage(savedLanguage);
+
+    // Wanneer de taal wordt gewijzigd, pas de inhoud aan
+    languageSelect.addEventListener('change', (event) => {
+        setLanguage(event.target.value);
+    });
 
     // Functie om het thema te wisselen
     themeToggle.addEventListener('click', () => {
         body.classList.toggle('dark-theme');
-        // Pas de tekst van de knop aan afhankelijk van het thema
-        if (body.classList.contains('dark-theme')) {
-            themeToggle.textContent = 'Schakel naar Licht Thema';
-        } else {
-            themeToggle.textContent = 'Schakel naar Donker Thema';
-        }
+        const currentLanguage = localStorage.getItem('language') || 'nl';
+        themeToggle.textContent = body.classList.contains('dark-theme') 
+            ? translations[currentLanguage].themeButtonDark 
+            : translations[currentLanguage].themeButtonLight;
     });
 });
+
 
 let debounceTimeout;
 const DEBOUNCE_DELAY = 30; // Tijd in milliseconden tussen elke invoer (bijv. 30ms)
