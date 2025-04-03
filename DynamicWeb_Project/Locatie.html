@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locaties in Brussel</title>
+    <title>Street Art in Brussel</title>
+    <!-- Link naar de Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <!-- Eigen CSS voor de kaart -->
     <link rel="stylesheet" href="Layout.css" />
-    
-    <!-- Voeg Leaflet.js CSS toe -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
   <body>
-    <!-- Header Sectie -->
     <header>
       <nav>
         <ul>
+          <!-- Theme toggle button -->
           <button id="theme-toggle">Schakel naar Donker Thema</button>
           <li><a href="Index.html">Home</a></li>
           <li><a href="Locatie.html">Locatie</a></li>
@@ -21,25 +24,12 @@
       </nav>
     </header>
 
-    <!-- Main content -->
-    <main>
-      <section id="intro">
-        <section id="locations">
-          <h2>Welkom bij BrusselsExplorer</h2>
-          <p>Ontdek de kunstwerken in Brussel op de kaart!</p>
-        </section>
+    <h1>Street Art in Brussel</h1>
+    <div id="map"></div>
 
-        <!-- Container voor de kaart -->
-        <div id="map" style="height: 500px;"></div>
-      </section>
-    </main>
-
-    <!-- Footer Sectie -->
-    <footer>
-      <p>&copy; 2025 BrusselsExplorer</p>
-    </footer>
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="Script.mjs"></script>
+    <!-- Voeg de Leaflet en de API Javascript toe -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Verbind met het externe JavaScript bestand -->
+    <script src="ScriptLocatie.mjs"></script>
   </body>
 </html>

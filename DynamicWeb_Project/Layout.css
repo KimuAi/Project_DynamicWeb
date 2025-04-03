@@ -229,6 +229,29 @@ main {
   font-size: 1em;
 }
 
+/* Styling voor de kaart */
+#map {
+  height: 600px; /* Stel de hoogte van de kaart in */
+  width: 100%;   /* De kaart vult de volledige breedte */
+  border: 3px solid #a7a47d; /* Verander de randkleur naar een zachtere tint */
+  border-radius: 12px; /* Maak de hoeken van de kaart ronder */
+  margin-top: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Verhoog de schaduw voor een dieper effect */
+  transition: transform 0.3s ease-in-out; /* Voeg een animatie toe voor hover-effect */
+}
+
+#map:hover {
+  transform: scale(1.05); /* Maak de kaart iets groter bij hover */
+}
+
+/* Styling voor de header */
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
 /* Favorite button styling */
 .favorite-btn {
   background-color: #d1c6b1;
